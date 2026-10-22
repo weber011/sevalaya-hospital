@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Calendar,
   ArrowRight,
@@ -8,19 +8,26 @@ import {
   Sparkles,
   MapPin,
   Clock,
-  CheckCircle2
+  Activity,
+  Building2,
+  Video
 } from 'lucide-react';
 import Container from '../common/Container';
+import HeroAnimatedBackground from './HeroAnimatedBackground';
 import { useLanguage } from '../../context/LanguageContext';
 import { hospitalData } from '../../data/hospitalData';
 
 /**
  * Homepage Hero Section for Sevalaya Eye Hospital
- * Premium, natural healthcare aesthetic with editorial typography,
- * authentic hospital photography, floating clinical credentials, and high conversion CTAs.
+ * Features:
+ * - Animated ophthalmic background with refractive optic rings, laser sweeps & particles
+ * - Eye Hospital related animated visual (Slit-lamp clinical examination, facility & vision animation)
+ * - Computerized diagnostic laser scanner line & live HUD telemetry
+ * - Authentic hospital copy, verified motto, and high-conversion appointment CTAs
  */
 export default function HeroSection({ onOpenAppointment }) {
   const { t, language } = useLanguage();
+  const [activeVisualTab, setActiveVisualTab] = useState('clinic'); // 'clinic' | 'facility' | 'video'
 
   const handleAppointmentClick = (e) => {
     e.preventDefault();
@@ -45,9 +52,6 @@ export default function HeroSection({ onOpenAppointment }) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
-
-  // Primary hero image derived from supplied hospital assets with fallback support
-  const heroImageSrc = '/assets/hospital-hero.jpg';
 
   const trustHighlights = [
     {
@@ -87,9 +91,8 @@ export default function HeroSection({ onOpenAppointment }) {
 
   return (
     <section id="home" className="hero-section" aria-label="Introduction & Eye Care Overview">
-      {/* Ambient decorative backdrop glows */}
-      <div className="hero-ambient-glow hero-ambient-glow--right" aria-hidden="true" />
-      <div className="hero-ambient-glow hero-ambient-glow--left" aria-hidden="true" />
+      {/* Animated Ophthalmic Background Layer (Particles, Refraction Rings & Laser Sweeps) */}
+      <HeroAnimatedBackground />
 
       <Container>
         <div className="hero-grid">
@@ -180,35 +183,110 @@ export default function HeroSection({ onOpenAppointment }) {
             </div>
           </div>
 
-          {/* Right Column: Natural Hospital Photography with Floating Clinical Badges */}
+          {/* Right Column: Eye Hospital Related Animated Visual */}
           <div className="hero-visual">
             <div className="hero-image-card">
-              {/* Floating Glassmorphic Badge: Modern Diagnostics (Top Right) */}
+              {/* Interactive View Switcher Tabs */}
+              <div className="hero-visual-nav" role="tablist" aria-label="Visual view options">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeVisualTab === 'clinic'}
+                  className={`hero-visual-nav__btn ${activeVisualTab === 'clinic' ? 'hero-visual-nav__btn--active' : ''}`}
+                  onClick={() => setActiveVisualTab('clinic')}
+                  title="Clinical Examination with Slit-Lamp & Retinal Diagnostics"
+                >
+                  <Activity size={12} aria-hidden="true" />
+                  <span>Clinical OPD</span>
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeVisualTab === 'facility'}
+                  className={`hero-visual-nav__btn ${activeVisualTab === 'facility' ? 'hero-visual-nav__btn--active' : ''}`}
+                  onClick={() => setActiveVisualTab('facility')}
+                  title="Modern Eye Care Hospital Facility"
+                >
+                  <Building2 size={12} aria-hidden="true" />
+                  <span>Hospital</span>
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeVisualTab === 'video'}
+                  className={`hero-visual-nav__btn ${activeVisualTab === 'video' ? 'hero-visual-nav__btn--active' : ''}`}
+                  onClick={() => setActiveVisualTab('video')}
+                  title="Animated Vision Care Presentation"
+                >
+                  <Video size={12} aria-hidden="true" />
+                  <span>Animation</span>
+                </button>
+              </div>
+
+              {/* Floating Glassmorphic Badge: Advanced Ophthalmology (Top Right) */}
               <div className="hero-float-badge hero-float-badge--top">
                 <div className="hero-float-badge__icon">
                   <Sparkles size={14} />
                 </div>
                 <div className="hero-float-badge__text">
-                  <span className="hero-float-badge__strong">Modern Diagnostics</span>
-                  <span className="hero-float-badge__sub">Computerized Precision</span>
+                  <span className="hero-float-badge__strong">Eye Care Hospital</span>
+                  <span className="hero-float-badge__sub">Advanced Diagnostics</span>
                 </div>
               </div>
 
-              {/* Authentic Hospital Photograph */}
-              <img
-                src={heroImageSrc}
-                alt="Detailed clinical eye examination and clarity ophthalmology at Sevalaya Eye Hospital"
-                className="hero-image"
-                width="700"
-                height="450"
-                loading="eager"
-                fetchPriority="high"
-                onError={(e) => {
-                  if (e.target.src !== '/assets/info-banner.jpeg') {
-                    e.target.src = '/assets/info-banner.jpeg';
-                  }
-                }}
-              />
+              {/* Visual Container */}
+              <div className="hero-visual-display">
+                {activeVisualTab === 'clinic' && (
+                  <>
+                    <img
+                      src="/assets/eye-hospital-clinic.jpg"
+                      alt="Modern ophthalmic clinical examination with doctor, patient and digital retinal diagnostic scanner at Sevalaya Eye Hospital"
+                      className="hero-hospital-img hero-hospital-img--animated"
+                      width="700"
+                      height="450"
+                      loading="eager"
+                      fetchPriority="high"
+                    />
+                    {/* Diagnostic Laser Scan Line */}
+                    <div className="hero-scanner-line" aria-hidden="true" />
+                    {/* Acuity Target HUD */}
+                    <div className="hero-hud-target" aria-hidden="true">
+                      <span className="hero-hud-target__pulse-dot" />
+                      <span>RETINAL DIAGNOSTICS • ACTIVE</span>
+                    </div>
+                  </>
+                )}
+
+                {activeVisualTab === 'facility' && (
+                  <>
+                    <img
+                      src="/assets/eye-hospital-facility.jpg"
+                      alt="Modern architectural glass facade of Sevalaya Eye Hospital medical center"
+                      className="hero-hospital-img hero-hospital-img--animated"
+                      width="700"
+                      height="450"
+                      loading="lazy"
+                    />
+                    <div className="hero-scanner-line" aria-hidden="true" />
+                    <div className="hero-hud-target" aria-hidden="true">
+                      <span className="hero-hud-target__pulse-dot" />
+                      <span>SEVALAYA EYE HOSPITAL • RANCHI</span>
+                    </div>
+                  </>
+                )}
+
+                {activeVisualTab === 'video' && (
+                  <video
+                    src="/assets/animation.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="hero-hospital-video"
+                    title="Sevalaya Eye Hospital animated vision care"
+                  />
+                )}
+              </div>
 
               {/* Floating Glassmorphic Badge: Verified Location (Bottom Left) */}
               <div className="hero-float-badge hero-float-badge--bottom">
