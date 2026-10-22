@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Calendar, ArrowRight, CheckCircle2, Phone, Eye, ShieldCheck, Sparkles } from 'lucide-react';
 import Container from '../common/Container';
 import { useLanguage } from '../../context/LanguageContext';
 import { hospitalData } from '../../data/hospitalData';
@@ -38,9 +38,9 @@ export default function HeroSection({ onOpenAppointment }) {
   const heroImageSrc = '/assets/hospital-hero.jpg';
 
   const trustPoints = [
-    t('trust1', 'Comprehensive Eye Examinations'),
-    t('trust2', 'Modern Diagnostic Technology'),
-    t('trust3', 'Patient-Focused Care')
+    { id: 1, title: t('trust1', 'Comprehensive Eye Examinations'), icon: Eye },
+    { id: 2, title: t('trust2', 'Modern Diagnostic Technology'), icon: Sparkles },
+    { id: 3, title: t('trust3', 'Patient-Focused Care'), icon: ShieldCheck }
   ];
 
   return (
@@ -49,9 +49,10 @@ export default function HeroSection({ onOpenAppointment }) {
         <div className="hero-grid">
           {/* Left Column: 44-48% Editorial Content */}
           <div className="hero-content">
-            <span className="hero-eyebrow">
-              {t('heroEyebrow', 'COMPASSIONATE EYE CARE')}
-            </span>
+            <div className="hero-eyebrow">
+              <Eye size={13} className="hero-eyebrow__icon" aria-hidden="true" />
+              <span>{t('heroEyebrow', 'COMPASSIONATE EYE CARE')}</span>
+            </div>
 
             <h1 className="hero-heading">
               {t('heroTitlePrefix', 'See the World with ')}<span className="hero-heading__accent">{t('heroTitleHighlight', 'Clarity.')}</span>
@@ -74,6 +75,16 @@ export default function HeroSection({ onOpenAppointment }) {
                 <span>{t('heroPrimaryCta', 'Book an Appointment')}</span>
               </a>
 
+              {/* Direct Tap-to-Call Helpline Button on Mobile */}
+              <a
+                href={hospitalData.contact.phoneTel}
+                className="hero-btn hero-btn--call show-mobile"
+                aria-label={`Call Hospital Helpline at ${hospitalData.contact.phoneDisplay}`}
+              >
+                <Phone size={15} aria-hidden="true" />
+                <span>{t('callNow', 'Call')}: {hospitalData.contact.phoneDisplay}</span>
+              </a>
+
               <a
                 href="#services"
                 className="hero-btn hero-btn--secondary"
@@ -86,14 +97,17 @@ export default function HeroSection({ onOpenAppointment }) {
               </a>
             </div>
 
-            {/* Trust Points */}
+            {/* Trust Points Badges */}
             <div className="hero-trust-list" role="list" aria-label="Key clinical pillars">
-              {trustPoints.map((point) => (
-                <div key={point} className="hero-trust-item" role="listitem">
-                  <CheckCircle2 size={17} className="hero-trust-icon" aria-hidden="true" />
-                  <span>{point}</span>
-                </div>
-              ))}
+              {trustPoints.map((point) => {
+                const IconComp = point.icon;
+                return (
+                  <div key={point.id} className="hero-trust-item" role="listitem">
+                    <CheckCircle2 size={16} className="hero-trust-icon" aria-hidden="true" />
+                    <span>{point.title}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -120,10 +134,10 @@ export default function HeroSection({ onOpenAppointment }) {
               <div className="hero-image-caption">
                 <div className="hero-image-caption__left">
                   <span className="hero-status-dot" aria-hidden="true" />
-                  <span>Daily Eye Specialists & Optometrists</span>
+                  <span>{t('specialistsAvailable', 'Daily Specialists & Optometrists')}</span>
                 </div>
                 <div className="hero-image-caption__badge">
-                  <span>OPD: {hospitalData.timings.hours}</span>
+                  <span>OPD: 9:00 AM – 7:00 PM</span>
                 </div>
               </div>
             </div>

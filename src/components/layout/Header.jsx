@@ -93,10 +93,15 @@ export default function Header() {
       <div className="top-bar">
         <Container>
           <div className="top-bar__container">
-            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-6)', flexWrap: 'wrap' }}>
-              <div className="top-bar__item">
-                <Clock size={13} aria-hidden="true" style={{ color: 'var(--color-primary)' }} />
-                <span>{t('topbarHours', 'OPD Consultation Hours:')} <strong>{hospitalData.timings.hours}</strong></span>
+            <div className="top-bar__left">
+              <div className="top-bar__item top-bar__hours">
+                <Clock size={12} aria-hidden="true" style={{ color: 'var(--color-primary)', flexShrink: 0 }} />
+                <span className="top-bar__hours-desktop">
+                  {t('topbarHours', 'OPD Consultation Hours:')} <strong>{hospitalData.timings.hours}</strong>
+                </span>
+                <span className="top-bar__hours-mobile">
+                  OPD: <strong>9 AM – 7 PM</strong>
+                </span>
               </div>
               <div className="top-bar__item hide-mobile">
                 <span className="badge badge--success" style={{ fontSize: '0.7rem', padding: '0.15rem 0.45rem' }}>
@@ -106,24 +111,27 @@ export default function Header() {
               </div>
             </div>
 
-            <div className="top-bar__item">
-              <Phone size={13} aria-hidden="true" style={{ color: 'var(--color-primary)' }} />
-              <span>{t('helpline', 'Helpline:')}</span>
-              <a
-                href={hospitalData.contact.phoneTel}
-                className="top-bar__link"
-                aria-label={`Call Now at ${hospitalData.contact.phoneDisplay}`}
-              >
-                {hospitalData.contact.phoneDisplay}
-              </a>
-              <a
-                href={hospitalData.contact.phoneTel}
-                className="btn btn--outline btn--sm hide-mobile"
-                style={{ padding: '0.15rem 0.5rem', height: '24px', fontSize: '0.7rem', marginLeft: '0.35rem' }}
-                aria-label={`Call Now at ${hospitalData.contact.phoneDisplay}`}
-              >
-                {t('callNow', 'Call Now')}
-              </a>
+            <div className="top-bar__right">
+              <div className="top-bar__item">
+                <Phone size={12} aria-hidden="true" style={{ color: 'var(--color-primary)', flexShrink: 0 }} />
+                <span className="hide-mobile">{t('helpline', 'Helpline:')}</span>
+                <a
+                  href={hospitalData.contact.phoneTel}
+                  className="top-bar__link top-bar__phone-link"
+                  aria-label={`Call Now at ${hospitalData.contact.phoneDisplay}`}
+                >
+                  <span className="top-bar__phone-desktop">{hospitalData.contact.phoneDisplay}</span>
+                  <span className="top-bar__phone-mobile">Call: {hospitalData.contact.phoneDisplay}</span>
+                </a>
+                <a
+                  href={hospitalData.contact.phoneTel}
+                  className="btn btn--outline btn--sm hide-mobile"
+                  style={{ padding: '0.15rem 0.5rem', height: '24px', fontSize: '0.7rem', marginLeft: '0.35rem' }}
+                  aria-label={`Call Now at ${hospitalData.contact.phoneDisplay}`}
+                >
+                  {t('callNow', 'Call Now')}
+                </a>
+              </div>
             </div>
           </div>
         </Container>
@@ -144,8 +152,8 @@ export default function Header() {
                 src={hospitalData.logoUrl}
                 alt="Sevalaya Hospital Official Logo"
                 className="brand__logo-img"
-                width="44"
-                height="44"
+                width="40"
+                height="40"
               />
               <div className="brand__text">
                 <span className="brand__name">{hospitalData.name}</span>
@@ -173,7 +181,7 @@ export default function Header() {
 
             {/* Right: Theme/Language controls, Primary Red Appointment CTA & Mobile Toggle */}
             <div className="nav-actions">
-              <div className="hide-mobile">
+              <div className="header-controls">
                 <ThemeLanguageControls isCompact={true} />
               </div>
 
@@ -196,7 +204,7 @@ export default function Header() {
                 aria-controls="mobile-navigation-drawer"
                 aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               >
-                {mobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+                {mobileMenuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
               </button>
             </div>
           </div>

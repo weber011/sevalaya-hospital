@@ -220,6 +220,7 @@ export default function ContactSection({ onOpenAppointment }) {
                   <a
                     href={hospitalData.contact.phoneTel}
                     className="btn btn--primary btn--md"
+                    style={{ maxWidth: '100%', whiteSpace: 'normal', height: 'auto', textAlign: 'center' }}
                     aria-label="Call reception at 7004214800 for hospital address and location directions"
                   >
                     <Phone size={15} aria-hidden="true" />
