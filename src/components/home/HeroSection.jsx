@@ -69,7 +69,7 @@ export default function HeroSection({ onOpenAppointment }) {
                 className="hero-btn hero-btn--primary"
                 onClick={handleAppointmentClick}
                 role="button"
-                aria-label="Book an Appointment at Sevalaya Hospital"
+                aria-label="Book an Appointment at Sevalaya Eye Hospital"
               >
                 <Calendar size={16} aria-hidden="true" />
                 <span>{t('heroPrimaryCta', 'Book an Appointment')}</span>
@@ -90,7 +90,7 @@ export default function HeroSection({ onOpenAppointment }) {
                 className="hero-btn hero-btn--secondary"
                 onClick={handleServicesClick}
                 role="button"
-                aria-label="Explore Eye Care Services offered by Sevalaya Hospital"
+                aria-label="Explore Eye Care Services offered by Sevalaya Eye Hospital"
               >
                 <span>{t('heroSecondaryCta', 'Explore Eye Care Services')}</span>
                 <ArrowRight size={15} aria-hidden="true" />
@@ -116,7 +116,7 @@ export default function HeroSection({ onOpenAppointment }) {
             <div className="hero-image-card">
               <img
                 src={heroImageSrc}
-                alt="Detailed clinical eye examination and clarity ophthalmology at Sevalaya Hospital"
+                alt="Detailed clinical eye examination and clarity ophthalmology at Sevalaya Eye Hospital"
                 className="hero-image"
                 width="700"
                 height="450"

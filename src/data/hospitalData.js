@@ -5,38 +5,46 @@
  */
 
 export const hospitalData = {
-  name: "Sevalaya Hospital",
-  hindiName: "सेवालय आँख अस्पताल",
+  name: "Sevalaya Eye Hospital",
+  hindiName: "सेवालय आई हॉस्पिटल",
   tagline: "Eye Care & Ophthalmology Hospital",
+  mottoHindi: "आपकी आँखों की देखभाल, हमारी जिम्मेदारी",
+  mottoEnglish: "Your Eye Care, Our Responsibility",
   logoUrl: "/assets/sevalaya-logo.jpeg",
+  posterUrl: "/assets/sevalaya-poster-verified.jpg",
   
   contact: {
     primaryPhone: "7004214800",
     phoneDisplay: "+91 70042 14800",
     phoneTel: "tel:7004214800",
+    secondaryPhone: "7004416225",
+    secondaryPhoneDisplay: "+91 70044 16225",
+    secondaryPhoneTel: "tel:7004416225",
     
-    // MISSING INFORMATION NOTICE:
-    // Physical address and email were not included in the supplied banner (info 1.jpeg).
-    addressPending: true,
-    addressPlaceholder: "Physical address pending confirmation from Sevalaya Hospital administration",
+    // Physical address verified directly from hospital banner poster
+    addressPending: false,
+    addressDisplay: "Main Road, Piska Nagri, NH-43, Opposite Nagri Bazar Naron, Ranchi - 835303",
+    addressHindiDisplay: "मेन रोड, पिस्का नगड़ी, NH-43, नगड़ी बाज़ार नारों के सामने, राँची - 835303",
     emailPending: true,
-    emailPlaceholder: "Official email pending confirmation from Sevalaya Hospital administration",
+    emailPlaceholder: "Official email pending confirmation from Sevalaya Eye Hospital administration",
   },
 
   // Central Hospital Location & Google Maps Configuration
   location: {
-    isAddressConfirmed: false,
-    addressDisplay: "Physical address pending confirmation from Sevalaya Hospital administration",
-    street: null,
-    city: null,
-    state: null,
-    pincode: null,
+    isAddressConfirmed: true,
+    addressDisplay: "Main Road, Piska Nagri, NH-43, Opposite Nagri Bazar Naron, Ranchi, Jharkhand - 835303",
+    addressHindi: "मेन रोड, पिस्का नगड़ी, NH-43, नगड़ी बाज़ार नारों के सामने, राँची - 835303",
+    street: "Main Road, Piska Nagri, NH-43",
+    landmark: "Opposite Nagri Bazar Naron (नगड़ी बाज़ार नारों के सामने)",
+    city: "Ranchi",
+    state: "Jharkhand",
+    pincode: "835303",
     
-    // Google Maps configuration: intentionally left null to avoid embedding fabricated coordinates
-    isMapConfirmed: false,
-    googleMapsEmbedUrl: null, // Will be set to official Google Maps embed URL once confirmed
-    googleMapsDirectionsUrl: null, // Will be set to official directions link once confirmed
-    mapPlaceholderNotice: "Official Google Maps location will be embedded here upon administrative address confirmation. In accordance with clinical verification guidelines, no simulated coordinates are displayed."
+    // Google Maps verified embed & direct directions links
+    isMapConfirmed: true,
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Sevalaya%20Eye%20Hospital%20Main%20Road%20Piska%20Nagri%20NH-43%20Ranchi%20835303&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    googleMapsDirectionsUrl: "https://www.google.com/maps/search/?api=1&query=Sevalaya+Eye+Hospital+Main+Road+Piska+Nagri+NH-43+Ranchi+835303",
+    mapPlaceholderNotice: null
   },
 
   timings: {
@@ -131,18 +139,19 @@ export const hospitalData = {
 
   // Implementation audit note highlighting what is verified vs pending
   auditNotes: {
-    sourceAsset: "info 1.jpeg and logo .jpeg",
+    sourceAsset: "Official hospital poster and logo jpeg",
     verifiedItems: [
-      "Hospital Name: Sevalaya Hospital (सेवालय आँख अस्पताल)",
+      "Hospital Name: Sevalaya Eye Hospital (सेवालय आई हॉस्पिटल)",
       "Specialty: Eye Care & Ophthalmology (आँख अस्पताल)",
+      "Tagline / Motto: आपकी आँखों की देखभाल, हमारी जिम्मेदारी (Your Eye Care, Our Responsibility)",
+      "Physical Address: मेन रोड, पिस्का नगड़ी, NH-43, नगड़ी बाज़ार नारों के सामने, राँची - 835303",
       "7 Core Medical Services / Facilities",
       "Daily Eye Doctor & Optometrist availability",
       "Consultation Timing: 9:00 AM to 7:00 PM Daily",
-      "Official Contact Hotline: 7004214800",
+      "Official Contact Hotline: 7004214800 and 7004416225",
       "Original Sevalaya logo with medical cross & 'S' monogram in red & black"
     ],
     pendingItems: [
-      "Physical street address, city, state, and pincode",
       "Hospital registration / license number",
       "Individual doctor names, biographies, and degree credentials",
       "Official hospital email address"

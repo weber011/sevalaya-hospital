@@ -109,7 +109,7 @@ export function buildWhatsAppAppointmentMessage({
   message
 }) {
   const lines = [
-    `*Appointment Request – Sevalaya Hospital*`,
+    `*Appointment Request – Sevalaya Eye Hospital*`,
     ``,
     `*Patient Name:* ${fullName.trim()}`,
     `*Mobile Number:* ${mobile.trim()}`,
@@ -119,7 +119,7 @@ export function buildWhatsAppAppointmentMessage({
     message?.trim() ? `*Additional Message:* ${message.trim()}` : null,
     ``,
     `---`,
-    `_Sent via Sevalaya Hospital Website. Please review and send this message to coordinate your consultation._`
+    `_Sent via Sevalaya Eye Hospital Website. Please review and send this message to coordinate your consultation._`
   ].filter((line) => line !== null);
 
   return lines.join('\n');
@@ -142,7 +142,7 @@ export function generateWhatsAppLink(formData, serviceLabel) {
  */
 export function getGeneralWhatsAppInquiryUrl(customMessage) {
   const defaultText =
-    'Hello Sevalaya Hospital, I would like to inquire about eye care services and specialist consultation availability.';
+    'Hello Sevalaya Eye Hospital, I would like to inquire about eye care services and specialist consultation availability.';
   const message = customMessage || defaultText;
   return `${WHATSAPP_CONFIG.baseUrl}/${WHATSAPP_CONFIG.phoneNumber}?text=${encodeURIComponent(message)}`;
 }

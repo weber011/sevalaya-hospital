@@ -101,7 +101,7 @@ export default function FacilitiesSection({ onConsultFacility }) {
           id="facilities-heading"
           eyebrow={t('facilitiesEyebrow', 'CLINICAL INFRASTRUCTURE')}
           title={t('facilitiesTitle', 'Hospital Facilities & Clinical Care')}
-          subtitle={t('facilitiesSubtitle', 'A clear overview of the specialized ophthalmic facilities and clinical departments available at Sevalaya Hospital.')}
+          subtitle={t('facilitiesSubtitle', 'A clear overview of the specialized ophthalmic facilities and clinical departments available at Sevalaya Eye Hospital.')}
           centered
         />
 

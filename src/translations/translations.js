@@ -37,10 +37,10 @@ export const translations = {
     trust3: "Patient-Focused Care",
 
     // About Section
-    aboutEyebrow: "ABOUT SEVALAYA HOSPITAL",
+    aboutEyebrow: "ABOUT SEVALAYA EYE HOSPITAL",
     aboutHeading: "Care That Puts Your Vision First",
     aboutIntro:
-      "Sevalaya Hospital is dedicated to eye care, combining attentive patient support with eye examinations and treatment services. Our focus is on helping patients understand their eye health and access appropriate care.",
+      "Sevalaya Eye Hospital is dedicated to eye care, combining attentive patient support with eye examinations and treatment services. Our focus is on helping patients understand their eye health and access appropriate care.",
     aboutBody:
       "Whether you are scheduling a routine computerized refractive assessment, exploring surgical options for cataracts, or managing ongoing ocular conditions like glaucoma or retina disorders, our clinical team provides clear guidance tailored to your specific needs.",
     pillar1Title: "Attentive Patient Support",
@@ -55,14 +55,14 @@ export const translations = {
     servicesEyebrow: "Specialized Eye Care & Clinical Facilities",
     servicesTitle: "Complete Eye Care, All in One Place",
     servicesSubtitle:
-      "From computerized refractive vision testing to modern cataract surgery and retinal therapy, Sevalaya Hospital provides dedicated ophthalmic facilities every day.",
+      "From computerized refractive vision testing to modern cataract surgery and retinal therapy, Sevalaya Eye Hospital provides dedicated ophthalmic facilities every day.",
     bookConsultBtn: "Book Consult",
 
     // Facilities Section
     facilitiesEyebrow: "CLINICAL INFRASTRUCTURE",
     facilitiesTitle: "Hospital Facilities & Clinical Care",
     facilitiesSubtitle:
-      "A clear overview of the specialized ophthalmic facilities and clinical departments available at Sevalaya Hospital.",
+      "A clear overview of the specialized ophthalmic facilities and clinical departments available at Sevalaya Eye Hospital.",
     facilitiesHoursNotice:
       "Operating Hours Policy: Outpatient consultations and diagnostic testing operate Daily 9:00 AM – 7:00 PM. Scheduled surgical procedures are planned following clinical consultation.",
     inquireBtn: "Inquire",
@@ -104,7 +104,7 @@ export const translations = {
 
     // Contact Section
     contactEyebrow: "COMMUNICATION & HOSPITAL VISITATION",
-    contactTitle: "Contact Sevalaya Hospital",
+    contactTitle: "Contact Sevalaya Eye Hospital",
     contactSubtitle:
       "Direct telephone helpline, outpatient consultation hours, and verified communication pathways for patient eye care.",
     helplineTitle: "Confirmed Telephone Helpline",
@@ -138,7 +138,7 @@ export const translations = {
 
     // Floating Button
     floatingWhatsAppLabel: "Chat on WhatsApp",
-    floatingWhatsAppAria: "Contact Sevalaya Hospital on WhatsApp"
+    floatingWhatsAppAria: "Contact Sevalaya Eye Hospital on WhatsApp"
   },
 
   hi: {
@@ -174,10 +174,10 @@ export const translations = {
     trust3: "रोगी-केंद्रित देखभाल",
 
     // About Section
-    aboutEyebrow: "सेवालय अस्पताल के बारे में",
+    aboutEyebrow: "सेवालय आई हॉस्पिटल के बारे में",
     aboutHeading: "आपकी दृष्टि को प्राथमिकता देने वाली देखभाल",
     aboutIntro:
-      "सेवालय अस्पताल नेत्र देखभाल के लिए समर्पित है, जो सचेत रोगी सहायता को नेत्र परीक्षण और उपचार सेवाओं के साथ जोड़ता है। हमारा ध्यान रोगियों को उनके नेत्र स्वास्थ्य को समझने और उचित उपचार प्राप्त करने में मदद करने पर है।",
+      "सेवालय आई हॉस्पिटल नेत्र देखभाल के लिए समर्पित है, जो सचेत रोगी सहायता को नेत्र परीक्षण और उपचार सेवाओं के साथ जोड़ता है। हमारा ध्यान रोगियों को उनके नेत्र स्वास्थ्य को समझने और उचित उपचार प्राप्त करने में मदद करने पर है।",
     aboutBody:
       "चाहे आप नियमित कम्प्यूटरीकृत आँख जाँच करवा रहे हों, मोतियाबिंद ऑपरेशन के विकल्प तलाश रहे हों, या ग्लूकोमा अथवा रेटिना की समस्या का प्रबंधन कर रहे हों, हमारी विशेषज्ञ टीम आपकी आवश्यकताओं के अनुरूप स्पष्ट मार्गदर्शन प्रदान करती है।",
     pillar1Title: "सहानुभूतिपूर्ण रोगी परामर्श",
@@ -192,14 +192,14 @@ export const translations = {
     servicesEyebrow: "विशिष्ट नेत्र चिकित्सा एवं नैदानिक सुविधाएँ",
     servicesTitle: "सम्पूर्ण नेत्र चिकित्सा, एक ही स्थान पर",
     servicesSubtitle:
-      "कम्प्यूटरीकृत दृष्टि जाँच से लेकर आधुनिक मोतियाबिंद ऑपरेशन और रेटिना उपचार तक, सेवालय अस्पताल प्रतिदिन समर्पित नेत्र सुविधाएँ प्रदान करता है।",
+      "कम्प्यूटरीकृत दृष्टि जाँच से लेकर आधुनिक मोतियाबिंद ऑपरेशन और रेटिना उपचार तक, सेवालय आई हॉस्पिटल प्रतिदिन समर्पित नेत्र सुविधाएँ प्रदान करता है।",
     bookConsultBtn: "परामर्श बुक करें",
 
     // Facilities Section
     facilitiesEyebrow: "चिकित्सीय अवसंरचना",
     facilitiesTitle: "अस्पताल की सुविधाएँ एवं चिकित्सीय सेवाएँ",
     facilitiesSubtitle:
-      "सेवालय अस्पताल में उपलब्ध विशिष्ट नेत्र परीक्षण और चिकित्सीय विभागों का स्पष्ट विवरण।",
+      "सेवालय आई हॉस्पिटल में उपलब्ध विशिष्ट नेत्र परीक्षण और चिकित्सीय विभागों का स्पष्ट विवरण।",
     facilitiesHoursNotice:
       "कार्य समय नीति: ओपीडी परामर्श और जाँच परीक्षण प्रतिदिन सुबह 9:00 से शाम 7:00 बजे तक संचालित होते हैं। शल्य चिकित्सा परामर्श के बाद तय की जाती है।",
     inquireBtn: "जानकारी लें",
@@ -241,7 +241,7 @@ export const translations = {
 
     // Contact Section
     contactEyebrow: "संपर्क एवं अस्पताल आवागमन",
-    contactTitle: "सेवालय अस्पताल से संपर्क करें",
+    contactTitle: "सेवालय आई हॉस्पिटल से संपर्क करें",
     contactSubtitle:
       "सीधा फोन हेल्पलाइन, दैनिक ओपीडी परामर्श समय और नेत्र चिकित्सा हेतु सत्यापित संपर्क साधन।",
     helplineTitle: "सत्यापित टेलीफोन हेल्पलाइन",
@@ -275,7 +275,7 @@ export const translations = {
 
     // Floating Button
     floatingWhatsAppLabel: "व्हाट्सएप में बात करें",
-    floatingWhatsAppAria: "सेवालय अस्पताल से व्हाट्सएप पर संपर्क करें"
+    floatingWhatsAppAria: "सेवालय आई हॉस्पिटल से व्हाट्सएप पर संपर्क करें"
   },
 
   nag: {
@@ -311,10 +311,10 @@ export const translations = {
     trust3: "मरीज कर खास ध्यान",
 
     // About Section
-    aboutEyebrow: "सेवालय अस्पताल बारे",
+    aboutEyebrow: "सेवालय आई अस्पताल बारे",
     aboutHeading: "राउर नजर कर सबसे पहिले ध्यान",
     aboutIntro:
-      "सेवालय अस्पताल आँख कर पूरा इलाज ले समर्पित हे, जहाँ मरीज कर पूरा ध्यान राइक के आँख कर जाँच आउर इलाज करल जाएला। हमर धियान मरीज मनके आँख कर बीमारी समझाए के उचित सलाह देवेक हे।",
+      "सेवालय आई अस्पताल आँख कर पूरा इलाज ले समर्पित हे, जहाँ मरीज कर पूरा ध्यान राइक के आँख कर जाँच आउर इलाज करल जाएला। हमर धियान मरीज मनके आँख कर बीमारी समझाए के उचित सलाह देवेक हे।",
     aboutBody:
       "कम्प्यूटर से नजर कर नंबर जाँच करवाएक होवे, चाहे मोतियाबिंद कर ऑपरेशन करवावेक होवे, चाहे काला मोतिया या पर्दा (रेटिना) कर इलाज—हमर डॉक्टर मन राउर जरूरत मुताबिक सही सलाह देवेना।",
     pillar1Title: "मरीज कर पूरा सहयोग",
@@ -329,14 +329,14 @@ export const translations = {
     servicesEyebrow: "खास आँख इलाज आउर सुविधा मन",
     servicesTitle: "पूरा आँख कर इलाज, एक्के जगह में",
     servicesSubtitle:
-      "कम्प्यूटर से आँख जाँच से लेके मोतियाबिंद ऑपरेशन आउर पर्दा (रेटिना) कर इलाज तक, सेवालय अस्पताल में रोज सुविधा मिलेला।",
+      "कम्प्यूटर से आँख जाँच से लेके मोतियाबिंद ऑपरेशन आउर पर्दा (रेटिना) कर इलाज तक, सेवालय आई अस्पताल में रोज सुविधा मिलेला।",
     bookConsultBtn: "परामर्श लेवू",
 
     // Facilities Section
     facilitiesEyebrow: "अस्पताल कर सुविधा मन",
     facilitiesTitle: "अस्पताल कर सुविधा आउर देखभाल",
     facilitiesSubtitle:
-      "सेवालय अस्पताल में आँख कर जाँच आउर इलाज कर सब सुविधा मनक जानकारी।",
+      "सेवालय आई अस्पताल में आँख कर जाँच आउर इलाज कर सब सुविधा मनक जानकारी।",
     facilitiesHoursNotice:
       "समय नियम: रोज बिहान 9:00 से सांझ 7:00 बजे तक ओपीडी आउर जाँच होवेला। ऑपरेशन डॉक्टर से मिलेक बाद तय करल जाएला।",
     inquireBtn: "पूछू",
@@ -378,7 +378,7 @@ export const translations = {
 
     // Contact Section
     contactEyebrow: "संपर्क आउर अस्पताल आवेक रास्ता",
-    contactTitle: "सेवालय अस्पताल से संपर्क करू",
+    contactTitle: "सेवालय आई अस्पताल से संपर्क करू",
     contactSubtitle:
       "अस्पताल कर फोन, डॉक्टर मिलेक समय आउर आँख इलाज ले जरूरी जानकारी।",
     helplineTitle: "अस्पताल फोन हेल्पलाइन",
@@ -412,6 +412,6 @@ export const translations = {
 
     // Floating Button
     floatingWhatsAppLabel: "व्हाट्सएप में बात करू",
-    floatingWhatsAppAria: "सेवालय अस्पताल से व्हाट्सएप में संपर्क करू"
+    floatingWhatsAppAria: "सेवालय आई अस्पताल से व्हाट्सएप में संपर्क करू"
   }
 };

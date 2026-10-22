@@ -62,7 +62,7 @@ export default function Footer({ onNavigate }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
                 <img
                   src={hospitalData.logoUrl}
-                  alt="Sevalaya Hospital"
+                  alt="Sevalaya Eye Hospital"
                   style={{
                     width: 46,
                     height: 46,
@@ -213,6 +213,15 @@ export default function Footer({ onNavigate }) {
                       {t('callNow', 'Call Now')}
                     </a>
                   </div>
+                  <div style={{ marginTop: '4px' }}>
+                    <a
+                      href={hospitalData.contact.secondaryPhoneTel}
+                      style={{ color: '#CBD5E1', fontSize: '0.85rem' }}
+                      aria-label={`Call Line 2 at ${hospitalData.contact.secondaryPhoneDisplay}`}
+                    >
+                      Line 2: {hospitalData.contact.secondaryPhoneDisplay}
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -226,7 +235,7 @@ export default function Footer({ onNavigate }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: '#25D366', fontWeight: 600, fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
-                    aria-label="Chat with Sevalaya Hospital on WhatsApp"
+                    aria-label="Chat with Sevalaya Eye Hospital on WhatsApp"
                   >
                     <span>{WHATSAPP_CONFIG.displayNumber}</span>
                     <ArrowUpRight size={13} aria-hidden="true" />
@@ -244,20 +253,32 @@ export default function Footer({ onNavigate }) {
                 </div>
               </div>
 
-              {/* Address Status */}
+              {/* Verified Hospital Address */}
               <div className="footer-contact-item">
                 <MapPin size={16} aria-hidden="true" />
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#7A8799' }}>Hospital Address</div>
-                  <span className="footer-badge-note">
+                  <div style={{ fontSize: '0.75rem', color: '#7A8799' }}>Hospital Address & Directions</div>
+                  <div style={{ color: '#E2E8F0', fontSize: '0.85rem', lineHeight: 1.4, marginTop: '2px' }}>
                     {hospitalData.location.addressDisplay}
-                  </span>
+                  </div>
+                  <div style={{ marginTop: '4px' }}>
+                    <a
+                      href={hospitalData.location.googleMapsDirectionsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: '#F87171', fontSize: '0.75rem', display: 'inline-flex', alignItems: 'center', gap: '4px', textDecoration: 'underline' }}
+                      aria-label="Open Sevalaya Eye Hospital in Google Maps"
+                    >
+                      <span>Open Google Maps</span>
+                      <ArrowUpRight size={12} aria-hidden="true" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Missing Information & Transparency Notice */}
+          {/* Clinical Verification Notice */}
           <div
             style={{
               backgroundColor: 'rgba(255, 255, 255, 0.04)',
@@ -268,9 +289,9 @@ export default function Footer({ onNavigate }) {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
-              <AlertCircle size={16} style={{ color: '#F59E0B', flexShrink: 0, marginTop: '2px' }} aria-hidden="true" />
+              <ShieldCheck size={16} style={{ color: '#10B981', flexShrink: 0, marginTop: '2px' }} aria-hidden="true" />
               <div style={{ fontSize: '0.75rem', color: '#9AA6B8', lineHeight: 1.55 }}>
-                <strong style={{ color: '#E2E8F0' }}>Clinical Verification Notice:</strong> All hospital services, consultation hours ({hospitalData.timings.hours}), specialist doctor availability, and contact number ({hospitalData.contact.primaryPhone}) are extracted verified from hospital media. Physical street location and hospital registration credentials are intentionally identified as pending administrative confirmation rather than invented.
+                <strong style={{ color: '#E2E8F0' }}>Verified Hospital Information:</strong> All hospital services, consultation hours ({hospitalData.timings.hours}), specialist doctor availability, physical address (Main Road, Piska Nagri, NH-43, Ranchi), and telephone numbers ({hospitalData.contact.primaryPhone} / {hospitalData.contact.secondaryPhone}) are verified from hospital information.
               </div>
             </div>
           </div>

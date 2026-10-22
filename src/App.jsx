@@ -62,7 +62,7 @@ export default function App() {
         {/* 1. Official Homepage Hero Section (#home) */}
         <HeroSection onOpenAppointment={handleOpenAppointment} />
 
-        {/* 2. About Sevalaya Hospital Section (#about) */}
+        {/* 2. About Sevalaya Eye Hospital Section (#about) */}
         <AboutSection />
 
         {/* 3. Eye Care Services Section (Complete 10-Service Clinical Grid) (#services) */}

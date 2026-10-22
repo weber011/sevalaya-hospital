@@ -41,7 +41,7 @@ export default function ServicesSection({ onSelectService }) {
           id="services-heading"
           eyebrow={t('servicesEyebrow', 'Specialized Eye Care & Clinical Facilities')}
           title={t('servicesTitle', 'Complete Eye Care, All in One Place')}
-          subtitle={t('servicesSubtitle', 'From computerized refractive vision testing to modern cataract surgery and retinal therapy, Sevalaya Hospital provides dedicated ophthalmic facilities every day.')}
+          subtitle={t('servicesSubtitle', 'From computerized refractive vision testing to modern cataract surgery and retinal therapy, Sevalaya Eye Hospital provides dedicated ophthalmic facilities every day.')}
           centered
         />
 

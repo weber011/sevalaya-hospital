@@ -28,8 +28,8 @@ export default function PolicyModal({ isOpen, onClose, type }) {
 
   const isPrivacy = type === 'privacy';
   const title = isPrivacy
-    ? 'Sevalaya Hospital – Privacy Policy'
-    : 'Sevalaya Hospital – Terms and Conditions';
+    ? `${hospitalData.name} – Privacy Policy`
+    : `${hospitalData.name} – Terms and Conditions`;
   const IconComp = isPrivacy ? ShieldCheck : FileText;
 
   return (
@@ -113,7 +113,7 @@ export default function PolicyModal({ isOpen, onClose, type }) {
 
               <h4>3. WhatsApp Communication</h4>
               <p>
-                When utilizing the WhatsApp click-to-chat feature, communication occurs directly over WhatsApp's encrypted platform between your personal device and Sevalaya Hospital's official contact desk. You retain full control to review, edit, or decline to send any pre-filled message before dispatch.
+                When utilizing the WhatsApp click-to-chat feature, communication occurs directly over WhatsApp's encrypted platform between your personal device and Sevalaya Eye Hospital's official contact desk. You retain full control to review, edit, or decline to send any pre-filled message before dispatch.
               </p>
 
               <h4>4. Information Use & Non-Disclosure</h4>
@@ -157,7 +157,7 @@ export default function PolicyModal({ isOpen, onClose, type }) {
 
               <h4>5. Intellectual Property</h4>
               <p>
-                The original Sevalaya Hospital logo, medical cross monogram, and clinical website text are proprietary assets of Sevalaya Hospital.
+                The original Sevalaya Eye Hospital logo, medical cross monogram, and clinical website text are proprietary assets of Sevalaya Eye Hospital.
               </p>
             </>
           )}

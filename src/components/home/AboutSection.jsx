@@ -30,7 +30,7 @@ export default function AboutSection() {
           {/* Left Column: Editorial Information */}
           <div className="about-content">
             <span className="about-eyebrow">
-              {t('aboutEyebrow', 'ABOUT SEVALAYA HOSPITAL')}
+              {t('aboutEyebrow', 'ABOUT SEVALAYA EYE HOSPITAL')}
             </span>
 
             <h2 id="about-heading" className="about-heading">
@@ -38,7 +38,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="about-intro">
-              {t('aboutIntro', 'Sevalaya Hospital is dedicated to eye care, combining attentive patient support with eye examinations and treatment services. Our focus is on helping patients understand their eye health and access appropriate care.')}
+              {t('aboutIntro', 'Sevalaya Eye Hospital is dedicated to eye care, combining attentive patient support with eye examinations and treatment services. Our focus is on helping patients understand their eye health and access appropriate care.')}
             </p>
 
             <p className="about-body">
@@ -95,7 +95,7 @@ export default function AboutSection() {
             <div className="about-image-card">
               <img
                 src="/assets/doctor-slitlamp-clinical.jpg"
-                alt="Authentic ophthalmic clinical slit-lamp eye examination conducted at Sevalaya Hospital"
+                alt="Authentic ophthalmic clinical slit-lamp eye examination conducted at Sevalaya Eye Hospital"
                 className="about-image"
                 width="720"
                 height="400"

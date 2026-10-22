@@ -146,11 +146,11 @@ export default function Header() {
               href="#home"
               className="brand"
               onClick={(e) => handleNavClick(e, 'home')}
-              aria-label="Sevalaya Hospital - Return to homepage"
+              aria-label="Sevalaya Eye Hospital - Return to homepage"
             >
               <img
                 src={hospitalData.logoUrl}
-                alt="Sevalaya Hospital Official Logo"
+                alt="Sevalaya Eye Hospital Official Logo"
                 className="brand__logo-img"
                 width="40"
                 height="40"

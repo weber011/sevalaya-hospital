@@ -95,7 +95,7 @@ export default function IntroAnimation({ onFinish, forceShow = false }) {
       className={`intro-overlay ${isFading ? 'intro-overlay--fading' : ''}`}
       role="dialog"
       aria-modal="true"
-      aria-label="Welcome to Sevalaya Hospital"
+      aria-label="Welcome to Sevalaya Eye Hospital"
     >
       {/* Accessible Skip Intro Control */}
       <button
@@ -115,7 +115,7 @@ export default function IntroAnimation({ onFinish, forceShow = false }) {
         <div className="intro-emblem-container">
           <img
             src={hospitalData.logoUrl}
-            alt="Sevalaya Hospital Original Emblem"
+            alt="Sevalaya Eye Hospital Original Emblem"
             className="intro-emblem-img"
             onError={handleImageError}
           />

@@ -16,8 +16,8 @@ export default function FloatingWhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         className="floating-whatsapp-btn"
-        aria-label={t('floatingWhatsAppAria', 'Contact Sevalaya Hospital on WhatsApp')}
-        title={t('floatingWhatsAppAria', 'Contact Sevalaya Hospital on WhatsApp')}
+        aria-label={t('floatingWhatsAppAria', 'Contact Sevalaya Eye Hospital on WhatsApp')}
+        title={t('floatingWhatsAppAria', 'Contact Sevalaya Eye Hospital on WhatsApp')}
       >
         <span className="floating-whatsapp-icon" aria-hidden="true">
           <svg

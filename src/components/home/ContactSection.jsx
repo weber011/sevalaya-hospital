@@ -53,7 +53,7 @@ export default function ContactSection({ onOpenAppointment }) {
         <SectionHeader
           id="contact-heading"
           eyebrow={t('contactEyebrow', 'COMMUNICATION & HOSPITAL VISITATION')}
-          title={t('contactTitle', 'Contact Sevalaya Hospital')}
+          title={t('contactTitle', 'Contact Sevalaya Eye Hospital')}
           subtitle={t('contactSubtitle', 'Direct telephone helpline, outpatient consultation hours, and verified communication pathways for patient eye care.')}
           centered
         />
@@ -67,24 +67,36 @@ export default function ContactSection({ onOpenAppointment }) {
             </div>
 
             <h3 className="contact-card__title">{t('helplineTitle', 'Confirmed Telephone Helpline')}</h3>
-            <div className="contact-card__highlight">
-              {hospitalData.contact.phoneDisplay}
+            <div className="contact-card__highlight" style={{ fontSize: '1.15rem' }}>
+              <div>{hospitalData.contact.phoneDisplay}</div>
+              <div style={{ fontSize: '1rem', color: 'var(--color-text-muted)', marginTop: '2px' }}>
+                {hospitalData.contact.secondaryPhoneDisplay}
+              </div>
             </div>
 
             <p className="contact-card__desc">
               {t('helplineDesc', 'Speak directly with our hospital reception for appointment coordination, emergency ophthalmic inquiries, and doctor availability.')}
             </p>
 
-            <div className="contact-card__action">
+            <div className="contact-card__action" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <a
                 href={hospitalData.contact.phoneTel}
                 className="btn btn--primary btn-call-now"
-                aria-label={`Call Now at ${hospitalData.contact.phoneDisplay}`}
+                aria-label={`Call primary line at ${hospitalData.contact.phoneDisplay}`}
               >
-                <Phone size={16} aria-hidden="true" />
-                <span>{t('callNow', 'Call Now')}</span>
+                <Phone size={15} aria-hidden="true" />
+                <span>{t('callNow', 'Call Now')}: {hospitalData.contact.primaryPhone}</span>
               </a>
-              <div style={{ fontSize: '0.7rem', color: 'var(--color-text-subtle)', textAlign: 'center', marginTop: '0.5rem' }}>
+              <a
+                href={hospitalData.contact.secondaryPhoneTel}
+                className="btn btn--outline"
+                style={{ width: '100%', justifyContent: 'center' }}
+                aria-label={`Call secondary line at ${hospitalData.contact.secondaryPhoneDisplay}`}
+              >
+                <Phone size={15} aria-hidden="true" />
+                <span>Call Line 2: {hospitalData.contact.secondaryPhone}</span>
+              </a>
+              <div style={{ fontSize: '0.7rem', color: 'var(--color-text-subtle)', textAlign: 'center' }}>
                 Opens phone dialler on supported mobile devices
               </div>
             </div>
@@ -101,9 +113,9 @@ export default function ContactSection({ onOpenAppointment }) {
               {hospitalData.timings.hours}
             </div>
 
-            <div className="contact-pending-badge" role="note">
-              <AlertTriangle size={13} aria-hidden="true" />
-              <span>{t('hoursPendingNote', 'Pending formal hospital verification before launch')}</span>
+            <div className="contact-pending-badge" style={{ backgroundColor: 'var(--color-success-bg, #EDFBF4)', color: 'var(--color-success, #0D7A4D)', borderColor: 'rgba(13, 122, 77, 0.2)' }} role="note">
+              <ShieldCheck size={13} aria-hidden="true" />
+              <span>Verified OPD: 9:00 AM – 7:00 PM (Daily)</span>
             </div>
 
             <p className="contact-card__desc">
@@ -150,7 +162,7 @@ export default function ContactSection({ onOpenAppointment }) {
                 rel="noopener noreferrer"
                 className="btn btn--outline"
                 style={{ width: '100%', justifyContent: 'center' }}
-                aria-label="Contact Sevalaya Hospital on WhatsApp"
+                aria-label="Contact Sevalaya Eye Hospital on WhatsApp"
               >
                 <MessageSquare size={15} aria-hidden="true" />
                 <span>{t('chatWhatsAppBtn', 'Chat on WhatsApp')}</span>
@@ -168,68 +180,73 @@ export default function ContactSection({ onOpenAppointment }) {
               <span>{t('mapHeaderTitle', 'Hospital Address & Google Maps Location')}</span>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span className="badge badge--subtle" style={{ fontSize: '0.72rem' }}>
-                Hospital Identity: {hospitalData.name} ({hospitalData.hindiName})
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+              <span className="badge badge--success" style={{ fontSize: '0.75rem', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                <ShieldCheck size={13} aria-hidden="true" />
+                Verified Hospital Address
               </span>
+              <a
+                href={hospitalData.location.googleMapsDirectionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn--primary btn--sm"
+                style={{ height: '32px', fontSize: '0.78rem', padding: '0 0.85rem' }}
+                aria-label="Get directions to Sevalaya Eye Hospital on Google Maps"
+              >
+                <Navigation size={13} aria-hidden="true" />
+                <span>Get Directions</span>
+                <ExternalLink size={12} aria-hidden="true" />
+              </a>
             </div>
           </div>
 
-          {hospitalData.location.isMapConfirmed && hospitalData.location.googleMapsEmbedUrl ? (
-            <iframe
-              src={hospitalData.location.googleMapsEmbedUrl}
-              title="Sevalaya Hospital Google Maps Location"
-              width="100%"
-              height="340"
-              style={{ border: 0 }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          ) : (
-            <div className="contact-map-body" role="region" aria-label="Hospital map status">
-              <div className="contact-map-placeholder-card">
-                <div className="contact-map-pin-icon" aria-hidden="true">
-                  <Navigation size={24} />
-                </div>
-
-                <h4>{t('mapPendingTitle', 'Physical Address & Location Confirmation Pending')}</h4>
-                <p>
-                  {hospitalData.location.mapPlaceholderNotice}
-                </p>
-
-                <div
-                  style={{
-                    backgroundColor: 'var(--color-bg-subtle)',
-                    padding: '0.65rem 1rem',
-                    borderRadius: 'var(--radius-sm)',
-                    marginBottom: '1.25rem',
-                    fontSize: '0.8rem',
-                    color: 'var(--color-text-main)',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem'
-                  }}
-                >
-                  <Building2 size={15} style={{ color: 'var(--color-primary)' }} />
-                  <span>
-                    <strong>Registered Name:</strong> {hospitalData.name} ({hospitalData.hindiName})
-                  </span>
-                </div>
-
-                <div>
-                  <a
-                    href={hospitalData.contact.phoneTel}
-                    className="btn btn--primary btn--md"
-                    style={{ maxWidth: '100%', whiteSpace: 'normal', height: 'auto', textAlign: 'center' }}
-                    aria-label="Call reception at 7004214800 for hospital address and location directions"
-                  >
-                    <Phone size={15} aria-hidden="true" />
-                    <span>{t('mapCallBtn', 'Call for Location & Directions')}: {hospitalData.contact.phoneDisplay}</span>
-                  </a>
-                </div>
+          {/* Verified Hospital Address Details Strip */}
+          <div
+            style={{
+              padding: '1.25rem 1.5rem',
+              backgroundColor: 'var(--color-bg-surface)',
+              borderBottom: '1px solid var(--color-border-subtle)',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: '1rem',
+              alignItems: 'center'
+            }}
+          >
+            <div>
+              <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-primary)', fontWeight: 700, marginBottom: '0.25rem' }}>
+                Physical Location (पता)
+              </div>
+              <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--color-text-main)', lineHeight: 1.4 }}>
+                {hospitalData.location.addressHindi}
+              </div>
+              <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', marginTop: '2px' }}>
+                {hospitalData.location.addressDisplay}
               </div>
             </div>
-          )}
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+              <div style={{ fontSize: '0.82rem', color: 'var(--color-text-muted)' }}>
+                <strong>Landmark:</strong> {hospitalData.location.landmark}
+              </div>
+              <div style={{ fontSize: '0.82rem', color: 'var(--color-text-muted)' }}>
+                <strong>Direct Contact:</strong> {hospitalData.contact.phoneDisplay} / {hospitalData.contact.secondaryPhoneDisplay}
+              </div>
+            </div>
+          </div>
+
+          {/* Google Maps Responsive Interactive Iframe */}
+          <div style={{ position: 'relative', width: '100%', minHeight: '360px', backgroundColor: 'var(--color-bg-subtle)' }}>
+            <iframe
+              src={hospitalData.location.googleMapsEmbedUrl}
+              title="Sevalaya Eye Hospital Google Maps Location"
+              width="100%"
+              height="380"
+              style={{ border: 0, display: 'block' }}
+              loading="lazy"
+              allowFullScreen=""
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
 
         {/* 3. Bottom Primary Conversion Strip: Book an Appointment */}
@@ -257,7 +274,7 @@ export default function ContactSection({ onOpenAppointment }) {
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn--outline"
-              aria-label="Contact Sevalaya Hospital on WhatsApp"
+              aria-label="Contact Sevalaya Eye Hospital on WhatsApp"
             >
               <MessageSquare size={16} aria-hidden="true" />
               <span>{t('chatWhatsAppBtn', 'Contact on WhatsApp')}</span>

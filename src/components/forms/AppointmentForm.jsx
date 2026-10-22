@@ -307,7 +307,7 @@ export default function AppointmentForm({
         </div>
 
         <p className="confirmation-footer-note">
-          WhatsApp Click-to-Chat connects directly with Sevalaya Hospital's desk at {WHATSAPP_CONFIG.displayNumber}.
+          WhatsApp Click-to-Chat connects directly with Sevalaya Eye Hospital's desk at {WHATSAPP_CONFIG.displayNumber}.
           No automated background bot or server-side messaging is used.
         </p>
       </div>
