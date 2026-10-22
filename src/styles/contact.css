@@ -1,0 +1,438 @@
+/**
+ * Sevalaya Hospital - Contact & Quick Action Styles
+ * Floating WhatsApp button, telephone call-now actions, and contact section.
+ */
+
+/* ==========================================================================
+   Floating WhatsApp Button
+   ========================================================================== */
+
+.floating-whatsapp-container {
+  position: fixed;
+  bottom: clamp(1.25rem, 3vw, 2rem);
+  right: clamp(1.25rem, 3vw, 2rem);
+  z-index: 900; /* Above regular content, below header mobile navigation drawer (z: 1000+) */
+  pointer-events: none; /* Container itself doesn't trap clicks */
+}
+
+.floating-whatsapp-btn {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  height: 56px;
+  min-width: 56px;
+  padding: 0 1rem 0 0.85rem;
+  box-shadow: 0 4px 20px rgba(18, 140, 126, 0.35);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform var(--transition-fast, 150ms ease),
+              box-shadow var(--transition-fast, 150ms ease),
+              background-color var(--transition-fast, 150ms ease);
+}
+
+.floating-whatsapp-btn:hover {
+  background-color: #20BA5A;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(18, 140, 126, 0.45);
+}
+
+.floating-whatsapp-btn:focus-visible {
+  outline: 3px solid #128C7E;
+  outline-offset: 3px;
+}
+
+.floating-whatsapp-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+}
+
+.floating-whatsapp-label {
+  margin-left: 0.5rem;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+/* On small screens, keep it a neat circular touch target to avoid obstructing screen content */
+@media (max-width: 640px) {
+  .floating-whatsapp-container {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .floating-whatsapp-btn {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .floating-whatsapp-label {
+    display: none; /* Hide label on small mobile viewports; aria-label provides full accessibility */
+  }
+}
+
+/* ==========================================================================
+   Contact Section
+   ========================================================================== */
+
+.contact-section {
+  background-color: var(--color-bg-page);
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5.5rem);
+  border-top: 1px solid var(--color-border-subtle, #EAEAEA);
+  position: relative;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6, 1.5rem);
+  margin-bottom: var(--space-10, 2.5rem);
+}
+
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.contact-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle, #EAEAEA);
+  border-radius: var(--radius-md, 6px);
+  padding: var(--space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: border-color var(--transition-normal, 200ms ease),
+              box-shadow var(--transition-normal, 200ms ease);
+}
+
+.contact-card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 18px -2px rgba(17, 24, 39, 0.06);
+}
+
+.contact-card__icon-wrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm, 4px);
+  background-color: var(--color-primary-tint, rgba(227, 30, 36, 0.06));
+  color: var(--color-primary, #E31E24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4, 1rem);
+  flex-shrink: 0;
+}
+
+.contact-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-main, #172033);
+  margin-bottom: 0.35rem;
+}
+
+.contact-card__highlight {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-secondary, #111111);
+  margin-bottom: 0.5rem;
+}
+
+.contact-card__desc {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-muted, #525E75);
+  line-height: 1.55;
+  flex-grow: 1;
+  margin-bottom: var(--space-5, 1.25rem);
+}
+
+.contact-card__action {
+  margin-top: auto;
+}
+
+/* Call Now Button Specifics */
+.btn-call-now {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  font-weight: 600;
+}
+
+/* Notice for Pending Address / Hours */
+.contact-pending-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: #FFFBEB;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+  border-radius: var(--radius-xs, 2px);
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+/* Bottom Conversion Strip in Contact Section */
+.contact-conversion-strip {
+  background-color: var(--color-bg-subtle, #F9FAFB);
+  border: 1px solid var(--color-border-subtle, #EAEAEA);
+  border-radius: var(--radius-md, 6px);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .contact-conversion-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
+}
+
+.contact-conversion-strip__text h4 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-secondary, #111111);
+  margin-bottom: 0.25rem;
+}
+
+.contact-conversion-strip__text p {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-muted, #525E75);
+  margin: 0;
+}
+
+.contact-conversion-strip__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Google Maps Container (With Configuration & Pending Address Protection)
+   ========================================================================== */
+
+.contact-map-wrapper {
+  margin-bottom: var(--space-8, 2rem);
+  background-color: #F8F9FA;
+  border: 1px solid var(--color-border-subtle, #EAEAEA);
+  border-radius: var(--radius-md, 6px);
+  overflow: hidden;
+  box-shadow: 0 4px 18px -2px rgba(17, 24, 39, 0.04);
+}
+
+.contact-map-header {
+  background-color: var(--color-bg-surface);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border-subtle, #EAEAEA);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contact-map-header__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-secondary, #111111);
+}
+
+.contact-map-body {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background-color: var(--color-bg-subtle, #F3F4F6);
+  background-image: 
+    radial-gradient(#CBD5E1 1px, transparent 1px),
+    radial-gradient(#CBD5E1 1px, var(--color-bg-subtle, #F3F4F6) 1px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+.contact-map-placeholder-card {
+  max-width: 540px;
+  width: 100%;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default, #E2E8F0);
+  border-radius: var(--radius-md, 6px);
+  padding: 1.75rem;
+  box-shadow: 0 10px 25px -5px rgba(17, 24, 39, 0.08);
+  text-align: center;
+}
+
+.contact-map-pin-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-primary-tint, rgba(227, 30, 36, 0.06));
+  color: var(--color-primary, #E31E24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.contact-map-placeholder-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-secondary, #111111);
+  margin-bottom: 0.5rem;
+}
+
+.contact-map-placeholder-card p {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-muted, #525E75);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   Policy & Terms Modal
+   ========================================================================== */
+
+.policy-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 19, 28, 0.65);
+  backdrop-filter: blur(3px);
+  z-index: 1100; /* Above all other layers */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.policy-modal-card {
+  background-color: var(--color-bg-surface);
+  max-width: 720px;
+  width: 100%;
+  max-height: 85vh;
+  border-radius: var(--radius-md, 6px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle, #EAEAEA);
+  animation: modalFadeIn 180ms ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.policy-modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border-subtle, #EAEAEA);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--color-bg-surface);
+}
+
+.policy-modal-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-secondary, #111111);
+  margin: 0;
+}
+
+.policy-modal-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted, #525E75);
+  padding: 6px;
+  border-radius: var(--radius-xs, 4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast, 150ms ease), color var(--transition-fast, 150ms ease);
+}
+
+.policy-modal-close:hover {
+  background-color: var(--color-bg-subtle, #F3F4F6);
+  color: var(--color-secondary, #111111);
+}
+
+.policy-modal-close:focus-visible {
+  outline: 2px solid var(--color-primary, #E31E24);
+  outline-offset: 2px;
+}
+
+.policy-modal-body {
+  padding: 1.5rem 1.75rem;
+  overflow-y: auto;
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-main, #172033);
+  line-height: 1.7;
+}
+
+.policy-modal-body h4 {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-secondary, #111111);
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.policy-modal-body ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.policy-modal-body li {
+  margin-bottom: 0.35rem;
+}
+
+.policy-modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--color-border-subtle, #EAEAEA);
+  background-color: var(--color-bg-subtle, #F9FAFB);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

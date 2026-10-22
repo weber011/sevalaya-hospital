@@ -1,0 +1,294 @@
+/**
+ * Sevalaya Hospital - About & Facilities Styles
+ * Editorial layout, authentic photography, restrained clinical aesthetics, zero AI fluff.
+ */
+
+/* ==========================================================================
+   About Section
+   ========================================================================== */
+
+.about-section {
+  background-color: var(--color-bg-page);
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5.5rem);
+  border-bottom: 1px solid var(--color-border-subtle, #EAEAEA);
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary, #E31E24);
+  margin-bottom: 0.85rem;
+}
+
+.about-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background-color: var(--color-primary, #E31E24);
+}
+
+.about-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.6vw, 2.85rem);
+  font-weight: 700;
+  color: var(--color-secondary, #111111);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.25rem;
+}
+
+.about-intro {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  color: var(--color-text-main, #172033);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  font-weight: 450;
+}
+
+.about-body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-muted, #525E75);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+/* Clinical Pillars */
+.about-pillars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.about-pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background-color: var(--color-bg-subtle, #F9FAFB);
+  border: 1px solid var(--color-border-subtle, #EAEAEA);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm, 4px);
+}
+
+.about-pillar__icon {
+  color: var(--color-primary, #E31E24);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-pillar__title {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--color-text-main, #172033);
+  margin-bottom: 0.25rem;
+}
+
+.about-pillar__desc {
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-muted, #525E75);
+  line-height: 1.5;
+}
+
+/* About Visual Card */
+.about-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-image-card {
+  border-radius: var(--radius-md, 6px);
+  border: 1px solid var(--color-border-subtle, #EAEAEA);
+  background-color: #F8F9FA;
+  box-shadow: 0 8px 30px -4px rgba(17, 24, 39, 0.06);
+  overflow: hidden;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  max-height: 440px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.about-image-caption {
+  background-color: var(--color-bg-surface);
+  border-top: 1px solid var(--color-border-subtle, #EAEAEA);
+  padding: 0.85rem 1.25rem;
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-muted, #525E75);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-image-caption strong {
+  color: var(--color-text-main, #172033);
+}
+
+/* ==========================================================================
+   Facilities Section
+   ========================================================================== */
+
+.facilities-section {
+  background-color: var(--color-bg-subtle, #F9FAFB);
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5.5rem);
+  border-bottom: 1px solid var(--color-border-subtle, #EAEAEA);
+  position: relative;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6, 1.5rem);
+  margin-bottom: var(--space-10, 2.5rem);
+}
+
+.facility-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle, #EAEAEA);
+  border-radius: var(--radius-md, 6px);
+  padding: var(--space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all var(--transition-normal, 200ms ease);
+}
+
+.facility-card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 16px -2px rgba(17, 24, 39, 0.05);
+  transform: translateY(-2px);
+}
+
+.facility-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.facility-card__icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm, 4px);
+  background-color: var(--color-primary-tint, rgba(227, 30, 36, 0.06));
+  color: var(--color-primary, #E31E24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast, 150ms ease);
+}
+
+.facility-card:hover .facility-card__icon-wrapper {
+  background-color: var(--color-primary, #E31E24);
+  color: #FFFFFF;
+}
+
+.facility-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text-main, #172033);
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.facility-card__desc {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-muted, #525E75);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1.25rem;
+}
+
+.facility-card__footer {
+  padding-top: var(--space-3, 0.75rem);
+  border-top: 1px solid var(--color-border-subtle, #EAEAEA);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-subtle, #79869C);
+}
+
+/* Operating Hours Transparent Callout */
+.facilities-hours-notice {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default, #E2E8F0);
+  border-left: 3px solid var(--color-primary, #E31E24);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-sm, 4px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.facilities-hours-notice__text {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-main, #172033);
+}
+
+.facilities-hours-notice__text strong {
+  color: var(--color-secondary, #111111);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facilities-hours-notice {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

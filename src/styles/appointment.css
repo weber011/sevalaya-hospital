@@ -1,0 +1,250 @@
+/**
+ * Sevalaya Hospital - Appointment Form Styles
+ * Clean clinical design, pure white background, restrained red accents, excellent responsive usability.
+ */
+
+.appointment-form-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle, #EAEAEA);
+  border-radius: var(--radius-md, 6px);
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  box-shadow: 0 4px 24px -2px rgba(17, 24, 39, 0.06);
+}
+
+.appointment-form-header {
+  margin-bottom: var(--space-6, 1.5rem);
+  border-bottom: 1px solid var(--color-border-subtle, #EAEAEA);
+  padding-bottom: var(--space-4, 1rem);
+}
+
+.appointment-form-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  font-weight: 700;
+  color: var(--color-secondary, #111111);
+  margin-bottom: 0.35rem;
+}
+
+.appointment-form-subtitle {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-muted, #525E75);
+  line-height: 1.55;
+}
+
+/* 2-Column Responsive Form Row */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4, 1rem);
+  margin-bottom: var(--space-1, 0.25rem);
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* Privacy Notice Callout */
+.form-privacy-notice {
+  background-color: var(--color-bg-subtle, #F9FAFB);
+  border: 1px solid var(--color-border-subtle, #EAEAEA);
+  border-radius: var(--radius-sm, 4px);
+  padding: 0.75rem 1rem;
+  margin-top: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-6, 1.5rem);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-muted, #525E75);
+  line-height: 1.5;
+}
+
+.form-privacy-notice strong {
+  color: var(--color-text-main, #172033);
+}
+
+.form-privacy-icon {
+  color: var(--color-primary, #E31E24);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Submit Actions */
+.form-submit-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+}
+
+.form-btn-submit {
+  width: 100%;
+  font-size: var(--font-size-base, 1rem);
+  font-weight: 600;
+  padding: 0.875rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.form-direct-call-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-subtle, #79869C);
+  text-align: center;
+  flex-wrap: wrap;
+  padding-top: var(--space-2, 0.5rem);
+}
+
+.form-direct-call-notice a {
+  color: var(--color-primary, #E31E24);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ==========================================================================
+   Post-Submission Confirmation & Review State
+   ========================================================================== */
+
+.appointment-confirmation {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle, #EAEAEA);
+  border-radius: var(--radius-md, 6px);
+  padding: clamp(1.75rem, 4vw, 3rem);
+  box-shadow: 0 4px 24px -2px rgba(17, 24, 39, 0.06);
+}
+
+.confirmation-badge-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(37, 211, 102, 0.12); /* WhatsApp brand soft tint */
+  color: #128C7E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-4, 1rem);
+}
+
+.confirmation-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  color: var(--color-secondary, #111111);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Critical WhatsApp Notice (Requirements 10 & 11) */
+.confirmation-notice-box {
+  background-color: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-left: 4px solid #16A34A;
+  border-radius: var(--radius-sm, 4px);
+  padding: 1rem 1.25rem;
+  margin: var(--space-4, 1rem) 0 var(--space-6, 1.5rem);
+  font-size: var(--font-size-sm, 0.875rem);
+  color: #166534;
+  line-height: 1.55;
+}
+
+.confirmation-notice-box strong {
+  color: #14532D;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Summary of Request Details */
+.confirmation-summary-card {
+  background-color: var(--color-bg-subtle, #F9FAFB);
+  border: 1px solid var(--color-border-subtle, #EAEAEA);
+  border-radius: var(--radius-sm, 4px);
+  padding: var(--space-5, 1.25rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+.confirmation-summary-title {
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-subtle, #79869C);
+  margin-bottom: var(--space-3, 0.75rem);
+  border-bottom: 1px solid var(--color-border-subtle, #EAEAEA);
+  padding-bottom: 0.35rem;
+}
+
+.confirmation-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 1.5rem;
+  font-size: var(--font-size-sm, 0.875rem);
+}
+
+@media (max-width: 600px) {
+  .confirmation-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+}
+
+.summary-item-label {
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-muted, #525E75);
+  display: block;
+}
+
+.summary-item-value {
+  font-weight: 600;
+  color: var(--color-text-main, #172033);
+}
+
+/* Actions in Confirmation */
+.confirmation-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+  align-items: stretch;
+}
+
+.btn-whatsapp-open {
+  background-color: #25D366;
+  color: #FFFFFF;
+  border: 1px solid #20BA5A;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-sm, 4px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-size: var(--font-size-base, 1rem);
+  transition: background-color var(--transition-fast, 150ms ease);
+}
+
+.btn-whatsapp-open:hover {
+  background-color: #1EBE5D;
+}
+
+.confirmation-secondary-actions {
+  display: flex;
+  gap: var(--space-3, 0.75rem);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.confirmation-footer-note {
+  font-size: 0.7rem;
+  color: var(--color-text-subtle, #79869C);
+  text-align: center;
+  margin-top: var(--space-4, 1rem);
+  line-height: 1.4;
+}
