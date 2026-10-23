@@ -6,7 +6,6 @@ import {
   Eye,
   ShieldCheck,
   Sparkles,
-  MapPin,
   Clock,
   Activity,
   Building2,
@@ -20,11 +19,12 @@ import { hospitalData } from '../../data/hospitalData';
 
 /**
  * Homepage Hero Section for Sevalaya Eye Hospital
- * Features:
- * - Professional panoramic holographic doctor & eye diagnostic background backdrop
- * - Animated ophthalmic background layer (refractive rings, floating particles & laser sweeps)
- * - Holographic biometric eye diagnostics visual with animated laser scan & HUD
- * - Authentic hospital copy, verified motto, and high-conversion appointment CTAs
+ * Professional, beautifully aligned, and clinical:
+ * - Unified left-aligned typographic hierarchy
+ * - Modern, clean medical motto bar (no clunky double-bubble pills)
+ * - Above-card segmented view switcher (100% unobstructed holographic visual)
+ * - Laser scan beam focused on holographic eye
+ * - Clutter-free clinical caption bar with verified Ranchi location & OPD hours
  */
 export default function HeroSection({ onOpenAppointment }) {
   const { t, language } = useLanguage();
@@ -102,7 +102,7 @@ export default function HeroSection({ onOpenAppointment }) {
         <div className="hero-grid">
           {/* Left Column: Editorial Content */}
           <div className="hero-content">
-            {/* Pill 1: Eyebrow Badge with Live Pulse */}
+            {/* 1. Sleek Eyebrow Badge with Live Pulse */}
             <div className="hero-eyebrow">
               <span className="hero-eyebrow__pulse" aria-hidden="true" />
               <Eye size={13} className="hero-eyebrow__icon" aria-hidden="true" />
@@ -111,20 +111,23 @@ export default function HeroSection({ onOpenAppointment }) {
               <span className="hero-eyebrow__location">RANCHI</span>
             </div>
 
-            {/* Pill 2: Authentic Hospital Tagline from Poster */}
-            <div className="hero-motto-pill" role="note" aria-label="Hospital motto">
-              <span className="hero-motto-pill__hindi">{hospitalData.mottoHindi}</span>
-              <span className="hero-motto-pill__sep">•</span>
-              <span className="hero-motto-pill__eng">{hospitalData.mottoEnglish}</span>
+            {/* 2. Authentic Hospital Tagline - Clean Editorial Style */}
+            <div className="hero-motto-bar" role="note" aria-label="Hospital motto">
+              <span className="hero-motto-bar__accent" aria-hidden="true" />
+              <div className="hero-motto-bar__content">
+                <span className="hero-motto-bar__hindi">{hospitalData.mottoHindi}</span>
+                <span className="hero-motto-bar__sep" aria-hidden="true">•</span>
+                <span className="hero-motto-bar__eng">{hospitalData.mottoEnglish}</span>
+              </div>
             </div>
 
-            {/* Main Editorial Headline */}
+            {/* 3. Main Editorial Headline */}
             <h1 className="hero-heading">
               {t('heroTitlePrefix', 'See the World with ')}
               <span className="hero-heading__accent">{t('heroTitleHighlight', 'Clarity.')}</span>
             </h1>
 
-            {/* Supporting Copy */}
+            {/* 4. Supporting Copy */}
             <p className="hero-lead">
               {t(
                 'heroSubtitle',
@@ -132,7 +135,7 @@ export default function HeroSection({ onOpenAppointment }) {
               )}
             </p>
 
-            {/* Prominent Action Buttons */}
+            {/* 5. Prominent Action Buttons */}
             <div className="hero-actions">
               <a
                 href="#appointment"
@@ -168,7 +171,7 @@ export default function HeroSection({ onOpenAppointment }) {
               </a>
             </div>
 
-            {/* Clinical Trust Micro-Cards (3 Columns) */}
+            {/* 6. Clinical Trust Micro-Cards (3 Columns) */}
             <div className="hero-trust-grid" role="list" aria-label="Key clinical pillars">
               {trustHighlights.map((item) => {
                 const IconComp = item.icon;
@@ -189,56 +192,56 @@ export default function HeroSection({ onOpenAppointment }) {
 
           {/* Right Column: Eye Hospital Related Animated Hologram Visual */}
           <div className="hero-visual">
-            <div className="hero-image-card">
-              {/* Interactive View Switcher Tabs */}
-              <div className="hero-visual-nav" role="tablist" aria-label="Visual view options">
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={activeVisualTab === 'hologram'}
-                  className={`hero-visual-nav__btn ${activeVisualTab === 'hologram' ? 'hero-visual-nav__btn--active' : ''}`}
-                  onClick={() => setActiveVisualTab('hologram')}
-                  title="Holographic Biometric Eye Diagnostics"
-                >
-                  <Scan size={12} aria-hidden="true" />
-                  <span>Hologram Eye</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={activeVisualTab === 'clinic'}
-                  className={`hero-visual-nav__btn ${activeVisualTab === 'clinic' ? 'hero-visual-nav__btn--active' : ''}`}
-                  onClick={() => setActiveVisualTab('clinic')}
-                  title="Clinical Examination with Slit-Lamp & Retinal Diagnostics"
-                >
-                  <Activity size={12} aria-hidden="true" />
-                  <span>Clinical OPD</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={activeVisualTab === 'facility'}
-                  className={`hero-visual-nav__btn ${activeVisualTab === 'facility' ? 'hero-visual-nav__btn--active' : ''}`}
-                  onClick={() => setActiveVisualTab('facility')}
-                  title="Modern Eye Care Hospital Facility"
-                >
-                  <Building2 size={12} aria-hidden="true" />
-                  <span>Hospital</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={activeVisualTab === 'video'}
-                  className={`hero-visual-nav__btn ${activeVisualTab === 'video' ? 'hero-visual-nav__btn--active' : ''}`}
-                  onClick={() => setActiveVisualTab('video')}
-                  title="Animated Vision Care Presentation"
-                >
-                  <Video size={12} aria-hidden="true" />
-                  <span>Animation</span>
-                </button>
-              </div>
+            {/* View Switcher Segmented Control Placed Above Card for Clean Visual Breathing Room */}
+            <div className="hero-view-switcher" role="tablist" aria-label="Visual view options">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeVisualTab === 'hologram'}
+                className={`hero-view-switcher__btn ${activeVisualTab === 'hologram' ? 'hero-view-switcher__btn--active' : ''}`}
+                onClick={() => setActiveVisualTab('hologram')}
+                title="Holographic Biometric Eye Diagnostics"
+              >
+                <Scan size={12} aria-hidden="true" />
+                <span>Hologram Eye</span>
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeVisualTab === 'clinic'}
+                className={`hero-view-switcher__btn ${activeVisualTab === 'clinic' ? 'hero-view-switcher__btn--active' : ''}`}
+                onClick={() => setActiveVisualTab('clinic')}
+                title="Clinical Examination with Slit-Lamp & Retinal Diagnostics"
+              >
+                <Activity size={12} aria-hidden="true" />
+                <span>Clinical OPD</span>
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeVisualTab === 'facility'}
+                className={`hero-view-switcher__btn ${activeVisualTab === 'facility' ? 'hero-view-switcher__btn--active' : ''}`}
+                onClick={() => setActiveVisualTab('facility')}
+                title="Modern Eye Care Hospital Facility"
+              >
+                <Building2 size={12} aria-hidden="true" />
+                <span>Hospital</span>
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeVisualTab === 'video'}
+                className={`hero-view-switcher__btn ${activeVisualTab === 'video' ? 'hero-view-switcher__btn--active' : ''}`}
+                onClick={() => setActiveVisualTab('video')}
+                title="Animated Vision Care Presentation"
+              >
+                <Video size={12} aria-hidden="true" />
+                <span>Animation</span>
+              </button>
+            </div>
 
-              {/* Floating Glassmorphic Badge: Advanced Diagnostics (Top Right) */}
+            <div className="hero-image-card">
+              {/* Floating Glassmorphic Badge: Advanced Diagnostics (Top Right - Desktop Only) */}
               <div className="hero-float-badge hero-float-badge--top">
                 <div className="hero-float-badge__icon">
                   <Sparkles size={14} />
@@ -264,7 +267,7 @@ export default function HeroSection({ onOpenAppointment }) {
                     />
                     {/* Glowing Hologram Optical Aura */}
                     <div className="hero-hologram-aura" aria-hidden="true" />
-                    {/* Diagnostic Laser Scan Line */}
+                    {/* Diagnostic Laser Scan Line focused on holographic eye */}
                     <div className="hero-scanner-line" aria-hidden="true" />
                     {/* Acuity Target HUD */}
                     <div className="hero-hud-target" aria-hidden="true">
@@ -323,22 +326,11 @@ export default function HeroSection({ onOpenAppointment }) {
                 )}
               </div>
 
-              {/* Floating Glassmorphic Badge: Verified Location (Bottom Left) */}
-              <div className="hero-float-badge hero-float-badge--bottom">
-                <div className="hero-float-badge__icon hero-float-badge__icon--location">
-                  <MapPin size={14} />
-                </div>
-                <div className="hero-float-badge__text">
-                  <span className="hero-float-badge__strong">Piska Nagri, NH-43</span>
-                  <span className="hero-float-badge__sub">Ranchi • Daily OPD</span>
-                </div>
-              </div>
-
-              {/* Clinical Live Information Bar */}
+              {/* Clean Integrated Clinical Information Bar */}
               <div className="hero-image-caption">
                 <div className="hero-image-caption__left">
                   <span className="hero-status-dot" aria-hidden="true" />
-                  <span>{t('specialistsAvailable', 'Daily Specialists & Optometrists')}</span>
+                  <span>Piska Nagri, Ranchi • Specialists on Duty</span>
                 </div>
                 <div className="hero-image-caption__badge">
                   <Clock size={12} aria-hidden="true" style={{ display: 'inline', marginRight: '4px' }} />

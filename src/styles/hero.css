@@ -1,10 +1,10 @@
 /**
  * Sevalaya Eye Hospital - Homepage Hero Section Styles
- * Elevated, stunning healthcare aesthetic:
- * - Animated ophthalmic background layer (refractive rings, floating particles, laser scan sweeps)
- * - Eye Hospital related animated visual (Slit-lamp clinical examination, facility & vision animation)
- * - Computerized diagnostic laser scanner line & live HUD telemetry
- * - Editorial serif typography with Sevalaya crimson accents
+ * Elevated, beautiful, aligned, and crystal-clear healthcare aesthetic:
+ * - Unified left-aligned typographic hierarchy
+ * - Modern editorial medical motto bar with straight vertical crimson accent
+ * - Above-card segmented view switcher for 100% unobstructed holographic visual
+ * - Concentric optical refraction rings, ambient glowing canvas, and laser sweeps
  * - Responsive 0px overflow architecture across all device sizes
  */
 
@@ -49,7 +49,7 @@
   background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.18;
+  opacity: 0.16;
   filter: saturate(1.1);
   transition: opacity var(--transition-normal);
 }
@@ -64,7 +64,7 @@
       rgba(255, 255, 255, 0.1) 100%
     ),
     url('/assets/holographic-eye-doctor.jpg');
-  opacity: 0.1;
+  opacity: 0.08;
 }
 
 @media (max-width: 960px) {
@@ -102,7 +102,7 @@
   border-radius: 50%;
   filter: blur(75px);
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.45;
   animation: floatOrb 14s ease-in-out infinite alternate;
 }
 
@@ -162,13 +162,13 @@
 }
 
 /* ==========================================================================
-   Hero Content & Typography
+   Hero Content & Typographic Hierarchy (Aligned & Beautiful)
    ========================================================================== */
 
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 48fr) minmax(0, 52fr);
-  gap: clamp(1.5rem, 3.5vw, 4rem);
+  gap: clamp(1.5rem, 3.5vw, 3.75rem);
   align-items: center;
   position: relative;
   z-index: 1;
@@ -178,15 +178,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  text-align: left;
   max-width: 580px;
 }
 
-/* Pill 1: Eyebrow Badge with Live Pulse */
+/* 1. Sleek Eyebrow Badge with Live Pulse */
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.3rem 0.85rem;
+  padding: 0.3rem 0.8rem;
   background-color: var(--color-primary-tint, #FDF2F2);
   border: 1px solid var(--color-border-accent, #FADBD8);
   border-radius: var(--radius-pill, 9999px);
@@ -196,7 +197,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-primary, #E31E24);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
   box-shadow: 0 1px 3px rgba(227, 30, 36, 0.08);
 }
 
@@ -241,39 +242,50 @@
   color: var(--color-text-main);
 }
 
-/* Pill 2: Authentic Hospital Tagline from Poster */
-.hero-motto-pill {
-  display: inline-flex;
+/* 2. Authentic Hospital Motto Bar - Clean Editorial Style (No Curved Parenthesis) */
+.hero-motto-bar {
+  display: flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-pill);
-  border-left: 3px solid var(--color-primary);
-  font-size: 0.78rem;
-  color: var(--color-text-muted);
-  background-color: var(--color-bg-surface);
-  border: 1px solid var(--color-border-subtle);
-  border-left: 3px solid var(--color-primary);
+  gap: 0.65rem;
   margin-bottom: 1.15rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   max-width: 100%;
+}
+
+.hero-motto-bar__accent {
+  width: 3px;
+  height: 18px;
+  background: linear-gradient(to bottom, #E31E24, #C81016);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.hero-motto-bar__content {
+  display: flex;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
 }
 
-.hero-motto-pill__hindi {
+.hero-motto-bar__hindi {
   color: var(--color-text-main);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
-.hero-motto-pill__sep {
-  opacity: 0.35;
-}
-
-.hero-motto-pill__eng {
+.hero-motto-bar__sep {
   color: var(--color-text-muted);
+  opacity: 0.4;
 }
 
-/* Main Editorial Headline */
+.hero-motto-bar__eng {
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+/* 3. Main Editorial Headline */
 .hero-heading {
   font-family: var(--font-serif);
   font-size: clamp(2.25rem, 4.3vw, 3.65rem);
@@ -300,7 +312,7 @@
   max-width: 520px;
 }
 
-/* Call to Action Buttons */
+/* 4. Call to Action Buttons */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -319,7 +331,7 @@
   text-decoration: none;
   cursor: pointer;
   transition: all var(--transition-fast);
-  border-radius: var(--radius-sm, 4px);
+  border-radius: var(--radius-sm, 6px);
   padding: 0.8rem 1.6rem;
   white-space: nowrap;
 }
@@ -379,7 +391,7 @@
   transform: translateX(4px);
 }
 
-/* Clinical Trust Micro-Cards (3 Columns) */
+/* 5. Clinical Trust Micro-Cards (3 Columns) */
 .hero-trust-grid {
   border-top: 1px solid var(--color-border-subtle, #EAEAEA);
   padding-top: 1.5rem;
@@ -444,7 +456,7 @@
 }
 
 /* ==========================================================================
-   Right Column: Eye Hospital Related Animated Visual Card
+   Right Column: Eye Hospital Hologram Visual Card
    ========================================================================== */
 
 .hero-visual {
@@ -452,6 +464,52 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 0.65rem;
+}
+
+/* Segmented Control Placed ABOVE Visual Card for Unobstructed Clarity */
+.hero-view-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  padding: 0.3rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  width: fit-content;
+}
+
+[data-theme="dark"] .hero-view-switcher {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero-view-switcher__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.hero-view-switcher__btn:hover {
+  color: var(--color-text-main);
+}
+
+.hero-view-switcher__btn--active {
+  background-color: var(--color-primary);
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(227, 30, 36, 0.35);
 }
 
 .hero-image-card {
@@ -478,9 +536,37 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
-  min-height: 390px;
-  max-height: 490px;
+  min-height: 380px;
+  max-height: 480px;
   background-color: #0b0f19;
+}
+
+/* Animated Eye Hospital Photograph (Cinematic Subtle Motion) */
+.hero-hospital-img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-hospital-img--animated {
+  animation: hospitalBreathingMotion 14s ease-in-out infinite alternate;
+  transform-origin: 50% 45%;
+}
+
+@keyframes hospitalBreathingMotion {
+  0% {
+    transform: scale(1.0) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.035) translate(-4px, -3px);
+  }
+  100% {
+    transform: scale(1.018) translate(3px, -2px);
+  }
 }
 
 /* Glowing Hologram Optical Aura */
@@ -509,61 +595,33 @@
   }
 }
 
-/* Animated Eye Hospital Photograph (Cinematic Subtle Motion) */
-.hero-hospital-img {
-  width: 100%;
-  height: 100%;
-  min-height: 390px;
-  max-height: 490px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.hero-hospital-img--animated {
-  animation: hospitalBreathingMotion 14s ease-in-out infinite alternate;
-  transform-origin: 50% 45%;
-}
-
-@keyframes hospitalBreathingMotion {
-  0% {
-    transform: scale(1.0) translate(0, 0);
-  }
-  50% {
-    transform: scale(1.035) translate(-4px, -3px);
-  }
-  100% {
-    transform: scale(1.018) translate(3px, -2px);
-  }
-}
-
 .hero-hospital-video {
   width: 100%;
   height: 100%;
-  min-height: 390px;
-  max-height: 490px;
+  min-height: 380px;
+  max-height: 480px;
   object-fit: cover;
   display: block;
   background-color: #ffffff;
 }
 
-/* Computerized Diagnostic Laser Scanner Line */
+/* Focused Hologram Laser Beam (over right holographic eye area) */
 .hero-scanner-line {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 15%;
+  right: 5%;
+  width: 55%;
   height: 2px;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    rgba(227, 30, 36, 0.3) 15%, 
-    rgba(227, 30, 36, 1) 50%, 
-    rgba(255, 120, 120, 0.95) 75%, 
+    rgba(56, 189, 248, 0.4) 20%, 
+    rgba(56, 189, 248, 1) 50%, 
+    rgba(255, 255, 255, 0.95) 75%, 
     transparent 100%
   );
   box-shadow: 
-    0 0 14px 3px rgba(227, 30, 36, 0.65),
-    0 0 25px 6px rgba(227, 30, 36, 0.35);
+    0 0 14px 3px rgba(56, 189, 248, 0.65),
+    0 0 25px 6px rgba(56, 189, 248, 0.35);
   z-index: 3;
   pointer-events: none;
   animation: laserScanSweep 4.2s ease-in-out infinite;
@@ -571,7 +629,7 @@
 
 @keyframes laserScanSweep {
   0% {
-    top: 0%;
+    top: 18%;
     opacity: 0;
   }
   15% {
@@ -581,7 +639,7 @@
     opacity: 1;
   }
   100% {
-    top: 94%;
+    top: 72%;
     opacity: 0;
   }
 }
@@ -589,8 +647,8 @@
 /* Acuity Target Reticle HUD */
 .hero-hud-target {
   position: absolute;
-  top: 3.5rem;
-  left: 1rem;
+  bottom: 1rem;
+  right: 1rem;
   z-index: 3;
   pointer-events: none;
   display: flex;
@@ -601,7 +659,7 @@
   background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(227, 30, 36, 0.5);
+  border: 1px solid rgba(56, 189, 248, 0.5);
   color: #FFFFFF;
   font-family: monospace;
   font-size: 0.6875rem;
@@ -617,7 +675,7 @@
   50% {
     opacity: 1;
     transform: scale(1.02);
-    border-color: rgba(227, 30, 36, 0.9);
+    border-color: rgba(56, 189, 248, 0.9);
   }
 }
 
@@ -625,8 +683,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--color-primary);
-  box-shadow: 0 0 8px var(--color-primary);
+  background-color: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
   animation: blinkFast 1.5s infinite;
 }
 
@@ -635,57 +693,7 @@
   50% { opacity: 0.25; }
 }
 
-/* Visual View Switcher (Tabs) */
-.hero-visual-nav {
-  position: absolute;
-  top: 0.85rem;
-  left: 0.85rem;
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 0.25rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="dark"] .hero-visual-nav {
-  background: rgba(15, 23, 42, 0.88);
-  border-color: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
-}
-
-.hero-visual-nav__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.3rem 0.65rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  white-space: nowrap;
-}
-
-.hero-visual-nav__btn:hover {
-  color: var(--color-text-main);
-}
-
-.hero-visual-nav__btn--active {
-  background-color: var(--color-primary);
-  color: #FFFFFF !important;
-  box-shadow: 0 2px 8px rgba(227, 30, 36, 0.35);
-}
-
-/* Floating Glassmorphic Badges on Photograph */
+/* Floating Glassmorphic Badges on Photograph (Desktop Only) */
 .hero-float-badge {
   position: absolute;
   z-index: 4;
@@ -714,12 +722,6 @@
   right: 0.85rem;
 }
 
-.hero-float-badge--bottom {
-  bottom: 3.6rem;
-  left: 0.85rem;
-  animation-delay: -2s;
-}
-
 @keyframes floatSubtle {
   0%, 100% {
     transform: translateY(0);
@@ -739,11 +741,6 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-}
-
-.hero-float-badge__icon--location {
-  background-color: var(--color-success-bg, #EDFBF4);
-  color: var(--color-success, #0D7A4D);
 }
 
 .hero-float-badge__text {
@@ -833,7 +830,8 @@
   .hero-hospital-img--animated,
   .hero-scanner-line,
   .hero-hud-target,
-  .hero-bg-orb {
+  .hero-bg-orb,
+  .hero-hologram-aura {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
@@ -844,123 +842,146 @@
 }
 
 /* ==========================================================================
-   Mobile & Tablet Responsive Enhancements (Visual Brought Above The Fold)
+   Mobile & Tablet Responsive (Strictly Aligned, Beautiful & Clear)
    ========================================================================== */
 
 @media (max-width: 960px) {
   .hero-section {
-    padding-top: 1.25rem;
-    padding-bottom: 2.25rem;
+    padding-top: 1rem;
+    padding-bottom: 2.75rem;
   }
 
   .hero-grid {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
+    width: 100%;
   }
 
-  /* Flatten hero-content so its elements can be reordered around the visual */
+  /* Flatten content so we can cleanly interleave the visual above the fold */
   .hero-content {
     display: contents;
   }
 
+  /* 1. Eyebrow Badge: strictly aligned to the left edge */
   .hero-eyebrow {
     order: 1;
-    margin-bottom: 0.4rem;
+    align-self: flex-start;
+    margin-bottom: 0.35rem;
   }
 
-  .hero-motto-pill {
+  /* 2. Motto Bar: strictly aligned to the left edge with clean straight accent */
+  .hero-motto-bar {
     order: 2;
+    align-self: flex-start;
     margin-bottom: 0.65rem;
-    font-size: 0.72rem;
-    padding: 0.2rem 0.65rem;
   }
 
+  .hero-motto-bar__content {
+    font-size: 0.75rem;
+  }
+
+  /* 3. Heading: strictly aligned to the left edge */
   .hero-heading {
     order: 3;
-    font-size: clamp(1.85rem, 5.8vw, 2.5rem);
-    line-height: 1.16;
-    margin-bottom: 0.65rem;
+    font-size: clamp(1.85rem, 5.8vw, 2.35rem);
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    text-align: left;
+    width: 100%;
   }
 
+  /* 4. Subtitle: strictly aligned to the left edge */
   .hero-lead {
     order: 4;
-    font-size: 0.9375rem;
+    font-size: 0.92rem;
     line-height: 1.55;
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
     max-width: 100%;
+    text-align: left;
+    width: 100%;
   }
 
-  /* The hospital visual is brought right below the intro copy */
-  .hero-visual {
+  /* 5. Conversion Buttons: Clean stack with proper spacing and touch target */
+  .hero-actions {
     order: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
     width: 100%;
-    margin-bottom: 0.35rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.92rem;
+    border-radius: 8px;
+    min-height: 48px;
+  }
+
+  .hero-btn--secondary {
+    display: none;
+  }
+
+  /* 6. Hospital Hologram Visual Card: Positioned cleanly below CTAs */
+  .hero-visual {
+    order: 6;
+    width: 100%;
+    gap: 0.45rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* View Switcher: cleanly spans across top above card */
+  .hero-view-switcher {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.2rem;
+    gap: 0.2rem;
+    box-shadow: none;
+  }
+
+  .hero-view-switcher__btn {
+    flex: 1;
+    justify-content: center;
+    padding: 0.35rem 0.25rem;
+    font-size: 0.65rem;
+    gap: 0.2rem;
   }
 
   .hero-image-card {
     border-radius: var(--radius-md, 10px);
     box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.12);
+    width: 100%;
   }
 
   .hero-visual-display {
-    min-height: 210px;
-    max-height: 270px;
+    min-height: 220px;
+    max-height: 260px;
   }
 
   .hero-hospital-img,
   .hero-hospital-video {
-    min-height: 210px;
-    max-height: 270px;
+    min-height: 220px;
+    max-height: 260px;
   }
 
-  /* Center nav tabs for mobile */
-  .hero-visual-nav {
-    top: 0.4rem;
-    left: 0.35rem;
-    right: 0.35rem;
-    justify-content: center;
-    padding: 0.15rem;
-    gap: 0.15rem;
-    flex-wrap: wrap;
-  }
-
-  .hero-visual-nav__btn {
-    padding: 0.2rem 0.45rem;
-    font-size: 0.6rem;
-    gap: 0.25rem;
-  }
-
-  /* Hide HUD reticle and top badge on mobile to keep examination clear and uncluttered */
+  /* Hide floating badges on mobile to keep the doctor and holographic eye 100% clean */
   .hero-hud-target,
   .hero-float-badge--top {
     display: none;
   }
 
-  .hero-float-badge--bottom {
-    bottom: 3.1rem;
-    left: 0.5rem;
-  }
-
-  .hero-float-badge__icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .hero-float-badge__strong {
-    font-size: 0.65rem;
-  }
-
-  .hero-float-badge__sub {
-    font-size: 0.58rem;
-  }
-
+  /* Refined clinical caption bar */
   .hero-image-caption {
     padding: 0.65rem 0.85rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .hero-image-caption__left {
@@ -972,28 +993,7 @@
     white-space: nowrap;
   }
 
-  /* Conversion Buttons positioned right under the eye hospital visual */
-  .hero-actions {
-    order: 6;
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-    width: 100%;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero-btn {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .hero-btn--secondary {
-    display: none;
-  }
-
-  /* Trust Badges in a compact, attractive 3-column micro card row */
+  /* 7. Trust Badges in a compact, attractive 3-column micro card row */
   .hero-trust-grid {
     order: 7;
     display: grid;
@@ -1001,6 +1001,7 @@
     gap: 0.45rem;
     border-top: 1px solid var(--color-border-subtle);
     padding-top: 1rem;
+    width: 100%;
   }
 
   .hero-trust-card {
