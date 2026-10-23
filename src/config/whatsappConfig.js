@@ -28,17 +28,18 @@ export const WHATSAPP_CONFIG = {
 };
 
 /**
- * 8 Configurable Service Options required by hospital administration
+ * 8 Verified Service Options for Sevalaya Eye Hospital
  */
 export const APPOINTMENT_SERVICES = [
-  { value: 'general-consultation', label: 'General Eye Consultation' },
+  { value: 'eye-testing', label: 'Eye Testing' },
   { value: 'computerised-eye-test', label: 'Computerised Eye Test' },
-  { value: 'cataract-consultation', label: 'Cataract Consultation' },
-  { value: 'glaucoma-consultation', label: 'Glaucoma Consultation' },
-  { value: 'retina-consultation', label: 'Retina Consultation' },
-  { value: 'childrens-eye-examination', label: "Children's Eye Examination" },
-  { value: 'spectacle-lens-consultation', label: 'Spectacle or Lens Consultation' },
-  { value: 'other', label: 'Other' },
+  { value: 'phaco-cataract-surgery', label: 'Phaco Cataract Surgery' },
+  { value: 'sics-cataract-surgery', label: 'SICS Cataract Surgery' },
+  { value: 'pterygium-surgery', label: 'Pterygium Surgery' },
+  { value: 'general-opd', label: 'General OPD Consultation' },
+  { value: 'pharmacy', label: 'Pharmacy / Medicine Inquiry' },
+  { value: 'lenskart-optical', label: 'Lenskart (Optical Store)' },
+  { value: 'other', label: 'Other Eye Care Service' },
 ];
 
 /**
@@ -65,36 +66,22 @@ export function mapServiceIdToAppointmentOption(serviceId) {
   if (!serviceId) return '';
   const id = serviceId.toLowerCase();
 
-  if (id.includes('computerised') || id.includes('refract') || id.includes('diagnostic')) {
-    return 'computerised-eye-test';
-  }
-  if (id.includes('cataract')) {
-    return 'cataract-consultation';
-  }
-  if (id.includes('glaucoma')) {
-    return 'glaucoma-consultation';
-  }
-  if (id.includes('retin')) {
-    return 'retina-consultation';
-  }
-  if (id.includes('children') || id.includes('pediatric')) {
-    return 'childrens-eye-examination';
-  }
-  if (id.includes('spectacle') || id.includes('lens') || id.includes('glasses')) {
-    return 'spectacle-lens-consultation';
-  }
-  if (id.includes('general') || id.includes('opd') || id.includes('pterygium') || id.includes('emergency')) {
-    return 'general-consultation';
-  }
-  if (id.includes('other') || id.includes('pharmacy')) {
-    return 'other';
-  }
+  if (id.includes('phaco')) return 'phaco-cataract-surgery';
+  if (id.includes('sics')) return 'sics-cataract-surgery';
+  if (id.includes('cataract')) return 'phaco-cataract-surgery';
+  if (id.includes('pterygium')) return 'pterygium-surgery';
+  if (id.includes('computerise') || id.includes('refract') || id.includes('auto-refract')) return 'computerised-eye-test';
+  if (id.includes('lenskart') || id.includes('optical') || id.includes('spectacle') || id.includes('glasses') || id.includes('lens')) return 'lenskart-optical';
+  if (id.includes('pharmacy') || id.includes('medicine') || id.includes('dispensary')) return 'pharmacy';
+  if (id.includes('eye-test') || id.includes('testing') || id.includes('exam')) return 'eye-testing';
+  if (id.includes('opd') || id.includes('general') || id.includes('consult')) return 'general-opd';
+  if (id.includes('other')) return 'other';
 
   // Check if it already matches a value directly
   const directMatch = APPOINTMENT_SERVICES.find((s) => s.value === id);
   if (directMatch) return directMatch.value;
 
-  return 'general-consultation';
+  return 'general-opd';
 }
 
 /**

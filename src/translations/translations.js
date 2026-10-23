@@ -55,7 +55,7 @@ export const translations = {
     servicesEyebrow: "Specialized Eye Care & Clinical Facilities",
     servicesTitle: "Complete Eye Care, All in One Place",
     servicesSubtitle:
-      "From computerized refractive vision testing to modern cataract surgery and retinal therapy, Sevalaya Eye Hospital provides dedicated ophthalmic facilities every day.",
+      "From comprehensive eye testing and computerised refraction to advanced Phaco & SICS cataract surgeries, Pterygium care, General OPD, on-site Pharmacy, and Lenskart Optical Store — Sevalaya Eye Hospital provides complete eye care every day.",
     bookConsultBtn: "Book Consult",
 
     // Facilities Section
@@ -128,7 +128,7 @@ export const translations = {
 
     // Footer
     footerDesc:
-      "Dedicated center for eye care and clinical ophthalmology. Providing modern cataract surgeries, pediatric vision examinations, glaucoma therapy, and computerized vision assessments daily.",
+      "Dedicated eye hospital in Ranchi offering comprehensive eye testing, advanced Phaco & SICS cataract surgeries, pterygium procedures, general OPD, pharmacy, and authorized Lenskart optical store daily.",
     quickNavTitle: "Quick Navigation",
     servicesColTitle: "Eye Care Services",
     contactColTitle: "Contact & Inquiries",
@@ -192,7 +192,7 @@ export const translations = {
     servicesEyebrow: "विशिष्ट नेत्र चिकित्सा एवं नैदानिक सुविधाएँ",
     servicesTitle: "सम्पूर्ण नेत्र चिकित्सा, एक ही स्थान पर",
     servicesSubtitle:
-      "कम्प्यूटरीकृत दृष्टि जाँच से लेकर आधुनिक मोतियाबिंद ऑपरेशन और रेटिना उपचार तक, सेवालय आई हॉस्पिटल प्रतिदिन समर्पित नेत्र सुविधाएँ प्रदान करता है।",
+      "व्यापक नेत्र जाँच और कम्प्यूटरीकृत परीक्षण से लेकर उन्नत फेको व एसआईसीएस मोतियाबिंद सर्जरी, टेरिजिम (नाखून) ऑपरेशन, सामान्य ओपीडी, फार्मेसी और लेंसकार्ट ऑप्टिकल स्टोर तक — सेवालय आई हॉस्पिटल प्रतिदिन सम्पूर्ण नेत्र देखभाल प्रदान करता है।",
     bookConsultBtn: "परामर्श बुक करें",
 
     // Facilities Section
@@ -265,7 +265,7 @@ export const translations = {
 
     // Footer
     footerDesc:
-      "नेत्र देखभाल और नैदानिक नेत्र विज्ञान का समर्पित केंद्र। मोतियाबिंद ऑपरेशन, बच्चों की आँख जाँच, ग्लूकोमा उपचार और कम्प्यूटरीकृत दृष्टि परीक्षण प्रतिदिन उपलब्ध।",
+      "राँची में समर्पित नेत्र चिकित्सालय — व्यापक आँख जाँच, फेको व एसआईसीएस मोतियाबिंद ऑपरेशन, टेरिजिम सर्जरी, सामान्य ओपीडी, इन-हाउस फार्मेसी एवं लेंसकार्ट ऑप्टिकल स्टोर की दैनिक सुविधा।",
     quickNavTitle: "त्वरित नेविगेशन",
     servicesColTitle: "नेत्र चिकित्सा सेवाएँ",
     contactColTitle: "संपर्क एवं पूछताछ",
@@ -329,7 +329,7 @@ export const translations = {
     servicesEyebrow: "खास आँख इलाज आउर सुविधा मन",
     servicesTitle: "पूरा आँख कर इलाज, एक्के जगह में",
     servicesSubtitle:
-      "कम्प्यूटर से आँख जाँच से लेके मोतियाबिंद ऑपरेशन आउर पर्दा (रेटिना) कर इलाज तक, सेवालय आई अस्पताल में रोज सुविधा मिलेला।",
+      "आँख के पूरा जाँच और कम्प्यूटर टेस्ट से लेके फेको व एसआईसीएस मोतियाबिंद ऑपरेशन, नाखून के इलाज, सामान्य ओपीडी, दवाखाना और लेंसकार्ट चश्मा स्टोर तक — सेवालय आई अस्पताल में सब सुविधा मिलेला।",
     bookConsultBtn: "परामर्श लेवू",
 
     // Facilities Section
@@ -402,7 +402,7 @@ export const translations = {
 
     // Footer
     footerDesc:
-      "आँख कर पूरा इलाज कर समर्पित अस्पताल। मोतियाबिंद ऑपरेशन, छौवा मनक आँख जाँच, ग्लूकोमा इलाज आउर कम्प्यूटर से आँख जाँच रोज उपलब्ध।",
+      "राँची में आँख के अस्पताल — आँख जाँच, फेको व एसआईसीएस मोतियाबिंद ऑपरेशन, नाखून सर्जरी, ओपीडी, दवाखाना और लेंसकार्ट चश्मा स्टोर रोज उपलब्ध।",
     quickNavTitle: "जल्दी जावेक लिंक",
     servicesColTitle: "आँख सेवा मन",
     contactColTitle: "संपर्क आउर पूछ-ताछ",

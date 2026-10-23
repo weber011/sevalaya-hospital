@@ -4,6 +4,8 @@ import {
   Eye,
   Shield,
   ShieldAlert,
+  ShieldCheck,
+  Sparkles,
   ClipboardList,
   AlertCircle,
   Pill,
@@ -22,6 +24,8 @@ const iconMap = {
   Eye,
   Shield,
   ShieldAlert,
+  ShieldCheck,
+  Sparkles,
   ClipboardList,
   AlertCircle,
   Pill,
@@ -41,8 +45,27 @@ export default function ServiceCard({
   onSelect,
   className = ''
 }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const IconComponent = iconMap[service.iconName] || Eye;
+
+  const displayTitle =
+    language === 'hi'
+      ? service.hindiTitle
+      : language === 'nag'
+      ? (service.nagpuriTitle || service.hindiTitle)
+      : service.title;
+
+  const displaySub =
+    language === 'en'
+      ? service.hindiTitle
+      : service.title;
+
+  const displayDesc =
+    language === 'hi'
+      ? (service.hindiDescription || service.description)
+      : language === 'nag'
+      ? (service.nagpuriDescription || service.description)
+      : service.description;
 
   const handleConsult = (e) => {
     e.preventDefault();
@@ -77,15 +100,15 @@ export default function ServiceCard({
       </div>
 
       <div className="service-card__hindi-title">
-        {service.hindiTitle}
+        {displaySub}
       </div>
 
       <h3 className="service-card__title">
-        {service.title}
+        {displayTitle}
       </h3>
 
       <p className="service-card__description">
-        {service.description}
+        {displayDesc}
       </p>
 
       <div className="service-card__footer">

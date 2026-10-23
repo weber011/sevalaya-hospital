@@ -102,7 +102,7 @@ export default function Footer({ onNavigate }) {
             <div>
               <h4 className="footer-col__title">{t('servicesColTitle', 'Eye Care Services')}</h4>
               <ul className="footer-links">
-                {hospitalData.services.slice(0, 6).map((service) => (
+                {hospitalData.services.map((service) => (
                   <li key={service.id}>
                     <a
                       href="#services"
