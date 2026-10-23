@@ -10,7 +10,8 @@ import {
   Clock,
   Activity,
   Building2,
-  Video
+  Video,
+  Scan
 } from 'lucide-react';
 import Container from '../common/Container';
 import HeroAnimatedBackground from './HeroAnimatedBackground';
@@ -20,14 +21,14 @@ import { hospitalData } from '../../data/hospitalData';
 /**
  * Homepage Hero Section for Sevalaya Eye Hospital
  * Features:
- * - Animated ophthalmic background with refractive optic rings, laser sweeps & particles
- * - Eye Hospital related animated visual (Slit-lamp clinical examination, facility & vision animation)
- * - Computerized diagnostic laser scanner line & live HUD telemetry
+ * - Professional panoramic holographic doctor & eye diagnostic background backdrop
+ * - Animated ophthalmic background layer (refractive rings, floating particles & laser sweeps)
+ * - Holographic biometric eye diagnostics visual with animated laser scan & HUD
  * - Authentic hospital copy, verified motto, and high-conversion appointment CTAs
  */
 export default function HeroSection({ onOpenAppointment }) {
   const { t, language } = useLanguage();
-  const [activeVisualTab, setActiveVisualTab] = useState('clinic'); // 'clinic' | 'facility' | 'video'
+  const [activeVisualTab, setActiveVisualTab] = useState('hologram'); // 'hologram' | 'clinic' | 'facility' | 'video'
 
   const handleAppointmentClick = (e) => {
     e.preventDefault();
@@ -91,6 +92,9 @@ export default function HeroSection({ onOpenAppointment }) {
 
   return (
     <section id="home" className="hero-section" aria-label="Introduction & Eye Care Overview">
+      {/* Panoramic Holographic Doctor & Ophthalmic Background Layer */}
+      <div className="hero-backdrop-panoramic" aria-hidden="true" />
+
       {/* Animated Ophthalmic Background Layer (Particles, Refraction Rings & Laser Sweeps) */}
       <HeroAnimatedBackground />
 
@@ -183,11 +187,22 @@ export default function HeroSection({ onOpenAppointment }) {
             </div>
           </div>
 
-          {/* Right Column: Eye Hospital Related Animated Visual */}
+          {/* Right Column: Eye Hospital Related Animated Hologram Visual */}
           <div className="hero-visual">
             <div className="hero-image-card">
               {/* Interactive View Switcher Tabs */}
               <div className="hero-visual-nav" role="tablist" aria-label="Visual view options">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeVisualTab === 'hologram'}
+                  className={`hero-visual-nav__btn ${activeVisualTab === 'hologram' ? 'hero-visual-nav__btn--active' : ''}`}
+                  onClick={() => setActiveVisualTab('hologram')}
+                  title="Holographic Biometric Eye Diagnostics"
+                >
+                  <Scan size={12} aria-hidden="true" />
+                  <span>Hologram Eye</span>
+                </button>
                 <button
                   type="button"
                   role="tab"
@@ -223,7 +238,7 @@ export default function HeroSection({ onOpenAppointment }) {
                 </button>
               </div>
 
-              {/* Floating Glassmorphic Badge: Advanced Ophthalmology (Top Right) */}
+              {/* Floating Glassmorphic Badge: Advanced Diagnostics (Top Right) */}
               <div className="hero-float-badge hero-float-badge--top">
                 <div className="hero-float-badge__icon">
                   <Sparkles size={14} />
@@ -236,6 +251,29 @@ export default function HeroSection({ onOpenAppointment }) {
 
               {/* Visual Container */}
               <div className="hero-visual-display">
+                {activeVisualTab === 'hologram' && (
+                  <>
+                    <img
+                      src="/assets/holographic-eye-doctor.jpg"
+                      alt="Doctor presenting futuristic holographic digital eye diagnostics at Sevalaya Eye Hospital"
+                      className="hero-hospital-img hero-hospital-img--animated"
+                      width="700"
+                      height="450"
+                      loading="eager"
+                      fetchPriority="high"
+                    />
+                    {/* Glowing Hologram Optical Aura */}
+                    <div className="hero-hologram-aura" aria-hidden="true" />
+                    {/* Diagnostic Laser Scan Line */}
+                    <div className="hero-scanner-line" aria-hidden="true" />
+                    {/* Acuity Target HUD */}
+                    <div className="hero-hud-target" aria-hidden="true">
+                      <span className="hero-hud-target__pulse-dot" />
+                      <span>HOLOGRAPHIC BIOMETRIC SCAN • ACTIVE</span>
+                    </div>
+                  </>
+                )}
+
                 {activeVisualTab === 'clinic' && (
                   <>
                     <img
@@ -244,12 +282,9 @@ export default function HeroSection({ onOpenAppointment }) {
                       className="hero-hospital-img hero-hospital-img--animated"
                       width="700"
                       height="450"
-                      loading="eager"
-                      fetchPriority="high"
+                      loading="lazy"
                     />
-                    {/* Diagnostic Laser Scan Line */}
                     <div className="hero-scanner-line" aria-hidden="true" />
-                    {/* Acuity Target HUD */}
                     <div className="hero-hud-target" aria-hidden="true">
                       <span className="hero-hud-target__pulse-dot" />
                       <span>RETINAL DIAGNOSTICS • ACTIVE</span>
